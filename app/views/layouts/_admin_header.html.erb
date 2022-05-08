@@ -1,7 +1,7 @@
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-    	<a class="navbar-brand h1" href="/" style="font-size: 36px">Nagano Cake</a>
+    	<a class="navbar-brand h1" href="/" style="font-size: 36px">Dro-Ful</a>
     	<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -11,16 +11,16 @@
           <ul class="navbar-nav ml-auto d-block">
             <% if admin_signed_in? %>
               <li class="d-inline-block">
-           <%= link_to "商品一覧", "#", class: 'nav-link mx-2', style:"color:white;"  %>
+           <%= link_to "投稿一覧", "#", class: 'nav-link mx-2', style:"color:white;"  %>
               </li>
               <li class="d-inline-block">
            <%= link_to "会員一覧", "#", class: 'nav-link mx-2', style:"color:white;"  %>
               </li>
-              <li class="d-inline-block">
-           <%= link_to "注文履歴一覧", "#", class: 'nav-link mx-2', style:"color:white;"  %>
-              </li>
-              <li class="d-inline-block">
-           <%= link_to "ジャンル一覧","#", class: 'nav-link mx-2', style:"color:white;"  %>
+           <!--   <li class="d-inline-block">-->
+           <!--<%#= link_to "注文履歴一覧", "#", class: 'nav-link mx-2', style:"color:white;"  %>-->
+           <!--   </li>-->
+           <!--   <li class="d-inline-block">-->
+           <!--<%#= link_to "ジャンル一覧","#", class: 'nav-link mx-2', style:"color:white;"  %>-->
               </li>
               <li class="d-inline-block">
            <%= link_to "ログアウト", "#", method: :delete, class: 'nav-link mx-2', style:"color:white;"  %>
