@@ -1,0 +1,60 @@
+<h2 class="mt-3">新規投稿</h2>
+  <div class="error">
+    <%= render "layouts/errors",obj:　post %>
+  </div>
+
+  <%= form_with model: post do |f| %>
+    <div class="form-group">
+      <%= f.label :撮影場所, class: "col-3" %>
+      <%= f.text_field :title, class:"form-control post_title col-xs-12" %>
+    </div>
+     <div class="form-group">
+      <%= f.label :都道府県, class: "col-3" %>
+      <%= f.select :prefecture, class:"form-control post_prefecture col-xs-12" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :撮影日, class: "col-3" %>
+      <%= f.date_field :shooting_date, class:"form-control post_shooting_date col-xs-12" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :アクセス, class: "col-3" %>
+      <%= f.text_area :access, class:"form-control post_access col-xs-12" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :申請の種類, class: "col-3" %>
+      <%= f.check_box :request, class:"form-control post_request col-xs-12" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :許可取り, class: "col-3" %>
+      <%= f.text_area :authorization, class:"form-control post_authorization col-xs-12" %>
+    </div>
+
+    <% if post.id === nil %>
+    <div class="form-group" id="star">
+      <%= f.label :rate %>
+      <%= f.hidden_field :rate, id: :review_star, class:'form-control' %>
+    </div>
+
+    <script>
+      $('#star').raty({
+        size     : 36,
+        starOff:  "<%= asset_path('star-off.png') %>",
+        starOn : "<%= asset_path('star-on.png') %>",
+        starHalf: "<%= asset_path('star-half.png') %>",
+        scoreName: 'post[rate]',
+        half: true,
+      });
+    </script>
+    <% else %>
+      <%= render "static_rate", book: book %>
+    <% end %>
+    
+    <div class="form-group">
+      <%= f.label :備考欄, class: "col-3" %>
+      <%= f.text_area :remarks, class:"form-control post_remarks col-xs-12" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit class:"btn btn-success" %>
+    </div>
+  <% end %>
