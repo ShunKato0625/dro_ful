@@ -2,6 +2,8 @@ class Post < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
 
+  has_one_attached :image
+
   belongs_to :customer
   has_many :favorites          , dependent: :destroy
   has_many :post_comments      , dependent: :destroy
@@ -21,7 +23,7 @@ class Post < ApplicationRecord
                                  greater_than_or_equal_to: 1,
                                  }, presence: true
   validates :shooting_date     , presence: true
-
+  validates :image             , presence: true
 
 
 

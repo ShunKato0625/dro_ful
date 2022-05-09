@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     resources :customers, only: [:index, :show, :edit, :update] do
       get 'post_index' => 'customers#post_index'
     end
-    resources :items, only: [:index, :show, :edit, :update]
+    resources :posts, only: [:index, :show, :edit, :update]
     get 'search'=> 'searches#search'
   end
 
@@ -34,5 +34,5 @@ Rails.application.routes.draw do
     end
     get 'search' => 'searches#search'
   end
-  
+
 end
