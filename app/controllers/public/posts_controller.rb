@@ -15,6 +15,7 @@ class Public::PostsController < ApplicationController
   end
 
   def index
+    @customer = Customer.find(current_customer.id)
     @posts = Post.all
   end
 
@@ -44,8 +45,8 @@ class Public::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :prefecture_id, :shooting_date, :access,
-                                 :drone_type, :request, :authorization,
+    params.require(:post).permit(:title, :shooting_date, :access,
+                                 :drone_type, :authorization,
                                  :remarks, :rate, :image
                                 )
   end

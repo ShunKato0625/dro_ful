@@ -25,21 +25,7 @@
       <%= f.label :機体名, class: "col-3" %>
       <%= f.text_field :drone_type, class:"form-control post_drone_type col-8" %>
     </div>
-    <div class="form-group">
-      <%= f.label :申請の種類, class: "col-3" %>
-      <%#= f.check_box :request, {}, "male", "female", class:"form-control post_request col-xs-12" %>
-      <%= f.check_box :request, {multiple: true},  nil %>該当なし
-      <%= f.check_box :request, {multiple: true},  nil %>空港などの周辺地域の上空
-      <%= f.check_box :request, {multiple: true},  nil %>緊急用務空域
-      <%= f.check_box :request, {multiple: true},  nil %>150m以上での高さでの飛行
-      <%= f.check_box :request, {multiple: true},  nil %>人工集中地区の上空
-      <%= f.check_box :request, {multiple: true},  nil %>夜間飛行
-      <%= f.check_box :request, {multiple: true},  nil %>目視外飛行
-      <%= f.check_box :request, {multiple: true},  nil %>人・物・車等の30m未満飛行
-      <%= f.check_box :request, {multiple: true},  nil %>イベント上空飛行
-      <%= f.check_box :request, {multiple: true},  nil %>危険物輸送
-      <%= f.check_box :request, {multiple: true},  nil %>物件投下
-    </div>
+
     <div class="form-group">
       <%= f.label :許可取り, class: "col-3" %>
       <%= f.text_area :authorization, class:"form-control post_authorization col-8" %>

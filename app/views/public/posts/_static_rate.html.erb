@@ -1,13 +1,13 @@
-<div id="rate_<%= post.id %>" class="form-group"></div>
+<div id="rate_<%= post %>" class="form-group"></div>
 <script>
-  $('#rate_<%= post.id %>').empty();
-  $('#rate_<%= post.id %>').raty({
+  $('#rate_<%= post %>').empty();
+  $('#rate_<%= post %>').raty({
     size: 20,
     starOff:  "<%= asset_path('star-off.png') %>",
     starOn : "<%= asset_path('star-on.png') %>",
     starHalf: "<%= asset_path('star-half.png') %>",
     half: true,
     readOnly: true,
-    score: <%= post.rate %>
+    score: <%#= post.rate %>
   });
 </script>

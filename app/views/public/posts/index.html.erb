@@ -4,22 +4,22 @@
           <% @posts.each do |post| %>
             <tr>
               <td>
-                <%= image_tag @post.image,size:"160x120" %>
+                <%= image_tag post.image,size:"160x120" %>
               </td>
               <td>
-                <%= link_to (@post.customer) do %>
-                <%= image_tag @post.customer.profile_image,size:"40x40" %>
+                <%= link_to post_path(@customer.id) do %>
+                <%#= image_tag post.customer.profile_image,size:"40x40" %>
                 <% end %>
               </td>
               <td><%= link_to post.title, post_path(post.id) %></td>
-              <td><%= post.prrefecture %></td>
+              <td><%#= post.prefecture %></td>
               <td>
                 <div id="favorite_btn_<%= post.id %>">
-                  <%= render 'favorites/favorite', post: @post %>
+                  <%#= render 'favorites/favorite', post: @post %>
                 </div>
               </td>
               <td>コメント数：<%= post.post_comments.count %></td>
-              <td><%= render "posts/static_rate", post: @post %></td>
+              <td><%= render "public/posts/static_rate", post: @post %></td>
               <td>閲覧数：<%= post.impressions_count %></td>
               <td><%= post.shooting_date %></td>
             </tr>
