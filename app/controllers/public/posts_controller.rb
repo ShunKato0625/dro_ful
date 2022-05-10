@@ -1,4 +1,7 @@
 class Public::PostsController < ApplicationController
+  before_action :authenticate_customer!
+  impressionist :actions => [:show]
+
   def new
     @post = Post.new
   end
@@ -42,12 +45,16 @@ class Public::PostsController < ApplicationController
     redirect_to posts_path
   end
 
+  def favorited_by?(customer)
+    favorites.exists?(customer_id: customer.id)
+  end
+
   private
 
   def post_params
     params.require(:post).permit(:title, :shooting_date, :access,
                                  :drone_type, :authorization,
-                                 :remarks, :rate, :image
+                                 :remarks, :rate, :image, :prefecture_id
                                 )
   end
 end

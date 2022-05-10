@@ -1,22 +1,35 @@
 <div class='row'>
   <div class="col-4 ml-5 mt-5">
-    <%= image_tag @post.image,size:"160x120" %>
+    <%= image_tag @post.image,size: "160x120" %>
     </td>
     <td>
-    <%#= image_tag post.customer.profile_image,size:"40x40" %>
+    <%#= image_tag @post.customer.profile_image,size:"40x40" %>
     </td>
     <td><%= @post.title %></td>
-    <td><%#= post.prefecture %></td>
+    <td><%= @post.prefecture.name %></td>
+    <td><%= @post.access %></td>
+    <td><%= @post.drone_type %></td>
+    <td><%= @post.authorization %></td>
+    <td><%= @post.remarks %></td>
     <td>
-    <!--<div id="favorite_btn_<%#= post.id %>">-->
-    <%#= render 'favorites/favorite', post: @post %>
+    <div id ="favorite_btn_<%= @post.id %>">
+    <%= render 'public/favorites/favorite', post: @post %>
     </div>
     </td>
-    <td>コメント数：<%= @post.post_comments.count %></td>
+
     <td><%= render "public/posts/static_rate", post: @post %></td>
     <td>閲覧数：<%= @post.impressions_count %></td>
     <td><%= @post.shooting_date %></td>
+    <td>
+      <%= link_to customers_path(@post.customer.id) do %>
+        <% if @customer.profile_image.attached?%>
+        <%= image_tag @customer.profile_image,size:"40x40" %>
+        <% end %>
+      <% end %>
+    </td>
+    <td><%= @customer.name %></td>
     </tr>
+
     <table>
           <div id="comments_area_<%= @post.id %>">
             <%= render 'public/post_comments/comment_index', post: @post %>

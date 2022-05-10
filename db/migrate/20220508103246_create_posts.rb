@@ -1,7 +1,8 @@
 class CreatePosts < ActiveRecord::Migration[6.1]
   def change
     create_table   :posts do |t|
-      t.references :customer, null: false, foreign_key: true
+      t.integer    :customer_id
+      t.integer    :prefecture_id
       t.string     :title
       t.text       :access
       t.text       :authorization
