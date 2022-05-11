@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'homes#top'
+  root 'public/homes#top'
   scope module: :public do
     resource :customers, only: [:edit, :update] do
       get 'my_page' => 'customers#show'
