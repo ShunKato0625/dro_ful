@@ -30,6 +30,10 @@
     </td>
     <td><%= @customer.nick_name %></td>
     </tr>
+    <% if @post.customer.id == current_customer.id %>
+      <td><%= link_to "Edit", "#(@post.id)", class: "btn btn-success btn-sm" %></td>
+      <td><%= link_to "Destroy","#(@post.id)",method: :delete, "data-confirm" => "Are you sure?" ,class: "btn btn-danger btn-sm"%></td>
+    <% end %>
 
     <table>
           <div id="comments_area_<%= @post.id %>">
