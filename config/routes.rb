@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'homes#top'
   scope module: :public do
     resource :customers, only: [:edit, :update] do
       get 'my_page' => 'customers#show'
@@ -26,7 +27,7 @@ Rails.application.routes.draw do
   end
 
   scope module: :public do
-    root 'homes#top'
+
     get 'homes/about'
     resources :posts do
       resources :post_comments, only: [:index, :create]
