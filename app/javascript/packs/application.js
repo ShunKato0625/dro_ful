@@ -13,12 +13,10 @@ import "popper.js";
 import "bootstrap";
 import "../stylesheets/application"
 import '@fortawesome/fontawesome-free/js/all'
-import "top"
 
 
 window.$ = window.jQuery = require('jquery');
 require('packs/raty')
-require('top')
 
 
 Rails.start()

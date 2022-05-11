@@ -15,15 +15,17 @@
  */
 
 body {
-  background-image: image-url("top.jpg");
+  background-image: image-url("sky.webp");
   background-size: cover;
 
 }
 
-// header{
-//   background-color: blue;
-// }
+header{
+  background-color: #003366;
+  opacity: 0.7;
+}
 
-// footer{
-//   background-color: blue;
-// }
+footer{
+  background-color: #003366;
+  opacity: 0.7;
+}

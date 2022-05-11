@@ -9,9 +9,10 @@
                 <% end %>
               </td>
               <td>
-                <%#= link_to post_path(@customer.id) do %>
-                <%#= image_tag post.customer.profile_image,size:"40x40" %>
-                <%# end %>
+                <%= link_to post_path(@customer.id) do %>
+                <%= image_tag post.customer.profile_image,size:"40x40" %>
+                <% end %>
+                <td><%= @customer.nick_name %></td>
               </td>
               <td><%= link_to post.title, post_path(post.id) %></td>
               <td><%= post.prefecture_id %></td>
@@ -22,6 +23,7 @@
               </td>
               <td>コメント数：<%= post.post_comments.count %></td>
               <td><%= render "public/posts/static_rate", post: post %></td>
+            
               <td>閲覧数：<%= post.impressions_count %></td>
               <td><%= post.shooting_date %></td>
             </tr>

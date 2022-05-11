@@ -1,7 +1,7 @@
-<div id="rate_<%= post %>" class="form-group"></div>
+<div id="rate_<%= post.id %>" class="form-group"></div>
 <script>
-  $('#rate_<%= post %>').empty();
-  $('#rate_<%= post %>').raty({
+  $('#rate_<%= post.id %>').empty();
+  $('#rate_<%= post.id %>').raty({
     size: 20,
     starOff:  "<%= asset_path('star-off.png') %>",
     starOn : "<%= asset_path('star-on.png') %>",
@@ -11,3 +11,4 @@
     score: <%= post.rate %>
   });
 </script>
+<%= post.rate %>
