@@ -9,7 +9,8 @@
       </tr>
     </table>
 
-    <table class="table table-bordered col-7 ml-3 mb-4 table-background">
+  <div class="row flex-nowrap">
+    <table class="table table-bordered col-7 ml-3 mb-4">
       <tbody>
         <tr>
           <th class="col-4 table-active">氏名</th>
@@ -27,10 +28,11 @@
           <td><%= current_customer.email %></td>
         </tr>
       </tbody>
-
-       <%= image_tag current_customer.get_profile_image(200,200)%>
-
-      </table>
+    </table>
+    <div class="col-5">
+       <%= image_tag current_customer.get_profile_image(200,200), class: "rounded-circle" %>
+    </div>
+  </div>
     <table class="table table-borderless ml-0 mb-5">
       <tr class="post-index-button">
         <th class="col-2"><h3><b>投稿履歴</b></h3></th>
