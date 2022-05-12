@@ -1,25 +1,26 @@
 <table class="table table-striped">
-       <h3 class="mini-title">商品一覧</h3>
+       <h3 class="mini-title">投稿一覧</h3>
           <tbody>
           <% @posts.each do |post| %>
             <tr>
               <td>
+                <% if post.image.attached?%>
                 <%= image_tag post.image, size: "210x150" %>
+                <% end %>
               </td>
               <td>
-                <%= link_to post_path(@customer.id) do %>
-                <%= image_tag post.customer.get_profile_image(40,40) %>
+                <%= link_to admin_post_path(post.id) do %>
+                <%= image_tag post.customer.profile_image,size:"40x40" %>
                 <% end %>
                 <td><%= post.customer.nick_name %></td>
               </td>
-              <td><%= link_to post.title, post_path(post.id) %></td>
-              <td><%= post.prefecture.name %></td>
+              <td><%= link_to post.title, admin_post_path(post.id) %></td>
+              <td><%= post.prefecture_id %></td>
               <td>
-                <div id ="favorite_btn_<%= post.id %>">
-                  <%= render 'public/favorites/favorite', post: post %>
-                </div>
+                <i class="fas fa-thumbs-up" aria-hidden="true"></i>
+                <%= post.favorites.count %>
               </td>
-              <td>コメント数：<%= post.post_comments.count %></td>
+              <td><i class="fas fa-comment-alt"></i><%= post.post_comments.count %></td>
               <td><%= render "public/posts/static_rate", post: post %></td>
 
               <td>閲覧数：<%= post.impressions_count %></td>

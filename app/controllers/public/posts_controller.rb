@@ -54,7 +54,8 @@ class Public::PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :shooting_date, :access,
                                  :drone_type, :authorization,
-                                 :remarks, :rate, :image, :prefecture_id
+                                 :remarks, :rate, :image, :prefecture_id,
+                                  request:[]
                                 )
   end
 end

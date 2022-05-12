@@ -22,7 +22,8 @@ Rails.application.routes.draw do
     resources :customers, only: [:index, :show, :edit, :update] do
       get 'post_index' => 'customers#post_index'
     end
-    resources :posts, only: [:index, :show, :edit, :update]
+    resources :posts, only: [:index, :show, :edit, :update, :destroy]
+      resources :post_comments, only: [:index, :create, :destroy]
     get 'search'=> 'searches#search'
   end
 
@@ -30,7 +31,7 @@ Rails.application.routes.draw do
 
     get 'homes/about'
     resources :posts do
-      resources :post_comments, only: [:index, :create]
+      resources :post_comments, only: [:index, :create, :destroy]
       resource :favorites, only: [:create, :destroy]
     end
     get 'search' => 'searches#search'

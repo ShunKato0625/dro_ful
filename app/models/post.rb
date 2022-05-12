@@ -9,6 +9,9 @@ class Post < ApplicationRecord
   has_many :post_comments      , dependent: :destroy
   has_many :favorited_customers, through: :favorites,
                                  source: :customer
+  # has_many :requests           , through: :post_requests
+  # has_many :post_requests      , dependent: :destroy
+
 
   validates :title             , presence: true
   validates :remarks           , presence: true,
@@ -24,12 +27,14 @@ class Post < ApplicationRecord
                                  }, presence: true
   validates :shooting_date     , presence: true
   validates :image             , presence: true
+  validates :request           , presence: true
+  validates :prefecture_id        , presence: true
 
 
 
   def favorited_by?(customer)
     favorites.exists?(customer_id: customer.id)
-  end
+  end  
 
 
   is_impressionable counter_cache: true

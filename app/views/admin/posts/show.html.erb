@@ -2,17 +2,20 @@
   <div class="col-4 ml-5 mt-5">
     <%= image_tag @post.image,size: "160x120" %>
     </td>
+    <td>
+    <%= image_tag @post.customer.profile_image,size:"40x40" %>
+    </td>
     <td><%= @post.title %></td>
     <td><%= @post.prefecture.name %></td>
     <td><%= @post.access %></td>
     <td><%= @post.drone_type %></td>
-    <td><%= @post.request %></td>
     <td><%= @post.authorization %></td>
     <td><%= @post.remarks %></td>
     <td>
-    <div id ="favorite_btn_<%= @post.id %>">
-    <%= render 'public/favorites/favorite', post: @post %>
-    </div>
+    <td>
+      <i class="fas fa-thumbs-up" aria-hidden="true"></i>
+      <%= @post.favorites.count %>
+    </td>
     </td>
 
     <td><%= render "public/posts/static_rate", post: @post %></td>
@@ -21,21 +24,18 @@
     <td><%= @post.shooting_date %></td>
     <td>
       <%= link_to customers_path(@post.customer.id) do %>
-        <%= image_tag @post.customer.get_profile_image(40,40) %>
+        <% if @post.customer.profile_image.attached? %>
+        <%= image_tag @post.customer.profile_image,size:"40x40" %>
+        <% end %>
       <% end %>
     </td>
-    <td><%= @customer.nick_name %></td>
+    <td><%= @post.customer.nick_name %></td>
     </tr>
-    <% if @post.customer.id == current_customer.id %>
-      <td><%= link_to "Edit", "#(@post.id)", class: "btn btn-success btn-sm" %></td>
-      <td><%= link_to "Destroy","#(@post.id)",method: :delete, "data-confirm" => "Are you sure?" ,class: "btn btn-danger btn-sm"%></td>
-    <% end %>
+      <td><%= link_to "Edit", edit_admin_post_path(@post.id), class: "btn btn-success btn-sm" %></td>
+      <td><%= link_to "Destroy",admin_post_path(@post.id),method: :delete, "data-confirm" => "Are you sure?" ,class: "btn btn-danger btn-sm"%></td>
 
     <table>
           <div id="comments_area_<%= @post.id %>">
             <%= render 'public/post_comments/comment_index', post: @post %>
           </div>
-          <div  id="comment_form">
-            <%= render "public/post_comments/comment_form", post: @post, post_comment: @post_comment %>
-          </div>
-        </table>
+    </table>
