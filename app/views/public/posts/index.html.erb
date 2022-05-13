@@ -1,53 +1,37 @@
-<h3 class="mini-title">投稿一覧</h3>
-<div class="row flex-wrap">
-　<% @posts.each do |post| %>
-　<div class="col-6">
-    <div class="card mb-3">
-      <div class="row mx-auto">
-        <div class="col-6">
-          <%= image_tag post.image, size: "210x150" %>
-        </div>
-        <div class="col-6">
-          <div class="row">
-            <div class="col-4">
-            <%= link_to post.title, post_path(post.id) %>
-            </div>
-            <div class="offset-4 col-4">
-            <%= post.prefecture.name %>
-            </div>
+<div class="row justify-content-center">
+  <h3 class="mini-title">投稿一覧</h3>
+</div>
+<div class="row">
+  <div class = "d-flex align-content-around flex-wrap" >
+　  <% @posts.each do |post| %>
+      <div class = "m-2 p-2 table-background" >
+        <%= link_to post_path(post.id) do %>
+          <%= image_tag post.image, size: "320x240" %>
+          <div class="row justify-content-around">
+            <p class="card-title text-dark pt-2"><%= post.title %></p>
           </div>
-          <div class="row">
-            <%= render "public/posts/static_rate", post: post %>
+          <div class="row justify-content-around">
+            <p class="card-title text-dark pt-2"><%= post.prefecture.name %></p>
           </div>
-          <div class="row">
-            <div class="col-4">
+          <div class="row justify-content-center">
+            <p class="card-title text-dark">オススメ度：<%= render "public/posts/static_rate", post: post %></p>
+          </div>
+          <div class="row justify-content-around">
               <i class="fas fa-eye"></i><%= post.impressions_count %>
-            </div>
-            <div class="col-4">
               <div id ="favorite_btn_<%= post.id %>">
                 <%= render 'public/favorites/favorite', post: post %>
               </div>
-            </div>
-            <div class="col-4">
               <i class="fas fa-comment-alt"></i><%= post.post_comments.count %>
-            </div>
           </div>
-          <div class="row">
-            <div class="col-4">
+          <div class="row justify-content-around">
               <%= post.shooting_date %>
-            </div>
-            <div class="col-4">
               <%= link_to post_path(@customer.id) do %>
                 <%= image_tag post.customer.get_profile_image(40,40) ,class: "rounded-circle"%>
               <% end %>
-            </div>
-            <div class="col-4">
               <%= post.customer.nick_name %>
-            </div>
           </div>
         </div>
-      </div>
-    </div>
+      <% end %>
+    <% end %>
   </div>
-  <% end %>
 </div>
