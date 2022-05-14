@@ -1,20 +1,30 @@
-<div class="row justify-content-center">
-  <h3 class="mini-title">投稿一覧</h3>
-</div>
-<div class="row">
-  <div class = "d-flex align-content-around flex-wrap" >
-　  <% @posts.each do |post| %>
-      <div class = "m-2 p-2 table-background" >
+<div class="container">
+  <div class="row">
+    <h3 class="col mini-title">投稿一覧</h3>
+    <div class="col form-inline d-block text-right">
+      <%= form_with url: search_path, method: :get, local: true do |f| %>
+        <%= f.text_field :keyword , placeholder:"キーワードで検索" %>
+        <%= f.button :type => "submit", class: "btn btn-outline-success" do %>
+          <i class="fas fa-search"></i>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <% @posts.each do |post| %>
+      <div class = "col-3 my-2 mx-2 pt-2 table-background text-center" >
         <%= link_to post_path(post.id) do %>
-          <%= image_tag post.image, size: "320x240" %>
+          <%= image_tag post.image, size: "250x220" %>
           <div class="row justify-content-around">
-            <p class="card-title text-dark pt-2"><%= post.title %></p>
+            <p class="col card-title text-dark pt-2"><%= post.title %></p>
           </div>
           <div class="row justify-content-around">
-            <p class="card-title text-dark pt-2"><%= post.prefecture.name %></p>
+            <p class="col card-title text-dark pt-2"><%= post.prefecture.name %></p>
           </div>
-          <div class="row justify-content-center">
-            <p class="card-title text-dark">オススメ度：<%= render "public/posts/static_rate", post: post %></p>
+          <div class="row align-item-center">
+            <div class="col">
+              <%= render "public/posts/static_rate", post: post %>
+            </div>
           </div>
           <div class="row justify-content-around">
               <i class="fas fa-eye"></i><%= post.impressions_count %>
@@ -30,8 +40,8 @@
               <% end %>
               <%= post.customer.nick_name %>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>

@@ -68,11 +68,12 @@ class Public::RegistrationsController < Devise::RegistrationsController
                                                          :last_name_kana,
                                                          :first_name,
                                                          :first_name_kana,
-                                                         :nick_name,])
+                                                         :nick_name,
+                                                         :introduction])
     end
 
   def after_sign_up_path_for(resource)
-    my_page_customers_path(resource)
+    customer_my_page_path(resource)
   end
 
   def after_sign_out_path_for(resource)

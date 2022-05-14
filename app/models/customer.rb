@@ -17,6 +17,7 @@ class Customer < ApplicationRecord
   validates :first_name_kana , presence: true
   validates :nick_name       , presence: true,
                                uniqueness: true
+  # validates :introduction    , presence: true
 
   def get_profile_image(width, height)
     unless profile_image.attached?
@@ -30,6 +31,11 @@ class Customer < ApplicationRecord
     # is_deletedがfalseならtrueを返すようにする
     super && (is_deleted == false)
   end
+
+  def self.search_customer(search)
+      Customer.where('nick_name LIKE(?)',"%#{search}%")
+  end
+
 
 
 end

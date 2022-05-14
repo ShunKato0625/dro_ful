@@ -33,7 +33,7 @@ class Public::PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.customer_id = current_customer.id
     if @post.update(post_params)
-      redirect_to post_path(@post), notice: 'You have updated book successfully.'
+      redirect_to post_path(@post), notice: '投稿内容を更新しました'
     else
       render "edit"
     end

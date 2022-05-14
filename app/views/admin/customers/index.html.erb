@@ -1,5 +1,14 @@
 <div class="px-5 mx-5">
-  <div class="mx-"><h3 class="mb-5 mini-title">会員一覧</h3></div>
+  <div class="mx-"><h3 class="mb-5 mini-title">会員一覧</h3>
+  <div class="form-inline d-block text-right">
+    <%= form_with url: "#",method: :get, local: true do |f| %>
+      <%= f.text_field :keyword , placeholder:"キーワードで検索" %>
+      <%= f.button :type => "submit", class: "btn btn-outline-success" do %>
+        <i class="fas fa-search"></i>
+      <% end %>
+    <% end %>
+  </div>
+</div>
   <div class="row mx-5 px-5">
 
     <table class="table border-bottom table-hover table-background">

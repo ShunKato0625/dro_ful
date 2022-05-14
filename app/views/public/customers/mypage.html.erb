@@ -1,0 +1,83 @@
+<div class="container">
+  <div class="row">
+    <div class="col-11 offset-1">
+      <h3 class="mb-5 mini-title">マイページ</h3>
+    </div>
+  </div>
+
+    <table class="table table-borderless">
+      <tr class="address-index-button">
+        <th class="col-2"><h3><b>登録情報</b></h3></th>
+        <td><%= link_to '編集する', edit_customer_path(current_customer), class: "btn btn-success col-2" %></td>
+      </tr>
+    </table>
+
+    <div class="row flex-nowrap">
+      <table class="table table-bordered col-7 ml-3 mb-4">
+        <tbody>
+          <tr>
+            <th class="col-4 table-active">氏名</th>
+            <td><%= current_customer.last_name %>　<%= current_customer.first_name %></td>
+          </tr>
+          <tr>
+            <th class="table-active">カナ</th>
+            <td><%= current_customer.last_name_kana %>　<%= current_customer.first_name_kana %></td>
+          <tr>
+            <th class="table-active">ニックネーム</th>
+            <td><%= current_customer.nick_name %></td>
+          </tr>
+          <tr>
+            <th class="table-active">メールアドレス</th>
+            <td><%= current_customer.email %></td>
+          </tr>
+          <tr>
+            <th class="table-active">自己紹介</th>
+            <td><%= current_customer.introduction %></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="col-5">
+         <%= image_tag current_customer.get_profile_image(200,200), class: "rounded-circle" %>
+      </div>
+    </div>
+    <table class="table table-borderless ml-0 mb-5">
+      <tr class="post-index-button">
+        <th class="col-2"><h3><b>投稿履歴</b></h3></th>
+        <td><%= link_to '一覧を見る', posts_path, class: "btn btn-primary col-3" %></td>
+      </tr>
+    </table>
+
+    <caption>ブックマーク一覧</caption>
+    <div class="row">
+      <div class = "d-flex align-content-around flex-wrap" >
+    　  <% @favorites.each do |favorite| %>
+          <div class = "m-2 p-2 table-background" >
+              <%= image_tag favorite.post.image, size: "320x240" %>
+              <div class="row justify-content-around">
+                <p class="card-title text-dark pt-2"><%= favorite.post.title %></p>
+              </div>
+              <div class="row justify-content-around">
+                <p class="card-title text-dark pt-2"><%= favorite.post.prefecture.name %></p>
+              </div>
+              <div class="row justify-content-center">
+                <p class="card-title text-dark">オススメ度：<%#= render "public/posts/static_rate", post: favorites %></p>
+              </div>
+              <div class="row justify-content-around">
+                  <i class="fas fa-eye"></i><%= favorite.post.impressions_count %>
+                  <div id ="favorite_btn_<%= favorite.post.id %>">
+                    <%#= render 'public/favorites/favorite', post: post %>
+                  </div>
+                  <i class="fas fa-comment-alt"></i><%= favorite.post.post_comments.count %>
+              </div>
+              <div class="row justify-content-around">
+                  <%= favorite.post.shooting_date %>
+                  <%= link_to customer_path(favorite.customer.id) do %>
+                    <%= image_tag favorite.post.customer.get_profile_image(40,40) ,class: "rounded-circle"%>
+                  <% end %>
+                  <%= favorite.post.customer.nick_name %>
+              </div>
+            </div>
+        <% end %>
+      </div>
+    </div>
+</div>

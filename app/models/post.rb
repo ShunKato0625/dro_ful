@@ -9,8 +9,6 @@ class Post < ApplicationRecord
   has_many :post_comments      , dependent: :destroy
   has_many :favorited_customers, through: :favorites,
                                  source: :customer
-  # has_many :requests           , through: :post_requests
-  # has_many :post_requests      , dependent: :destroy
 
 
   validates :title             , presence: true
@@ -30,11 +28,14 @@ class Post < ApplicationRecord
   validates :request           , presence: true
   validates :prefecture_id        , presence: true
 
-
-
   def favorited_by?(customer)
     favorites.exists?(customer_id: customer.id)
-  end  
+  end
+
+  def self.search_post(search)
+      Post.where(['title LIKE(?) OR prefecture_id LIKE(?) OR request LIKE(?)',
+                  "%#{search}%", "%#{search}%", "%#{search}%"])
+  end
 
 
   is_impressionable counter_cache: true
