@@ -19,7 +19,7 @@ class Public::PostsController < ApplicationController
 
   def index
     @customer = Customer.find(current_customer.id)
-    @posts = Post.all
+    @posts = Post.all.page(params[:page]).per(9)
   end
 
   def show

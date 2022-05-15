@@ -1,47 +1,7 @@
 <div class="container">
   <div class="row">
     <h3 class="col mini-title">投稿一覧</h3>
-    <div class="col form-inline d-block text-right">
-      <%= form_with url: search_path, method: :get, local: true do |f| %>
-        <%= f.text_field :keyword , placeholder:"キーワードで検索" %>
-        <%= f.button :type => "submit", class: "btn btn-outline-success" do %>
-          <i class="fas fa-search"></i>
-        <% end %>
-      <% end %>
-    </div>
+      <%= render 'shared/searches/search_form_post' %>
   </div>
-  <div class="row justify-content-center">
-    <% @posts.each do |post| %>
-      <div class = "col-3 my-2 mx-2 pt-2 table-background text-center" >
-        <%= link_to post_path(post.id) do %>
-          <%= image_tag post.image, size: "250x220" %>
-          <div class="row justify-content-around">
-            <p class="col card-title text-dark pt-2"><%= post.title %></p>
-          </div>
-          <div class="row justify-content-around">
-            <p class="col card-title text-dark pt-2"><%= post.prefecture.name %></p>
-          </div>
-          <div class="row align-item-center">
-            <div class="col">
-              <%= render "public/posts/static_rate", post: post %>
-            </div>
-          </div>
-          <div class="row justify-content-around">
-              <i class="fas fa-eye"></i><%= post.impressions_count %>
-              <div id ="favorite_btn_<%= post.id %>">
-                <%= render 'public/favorites/favorite', post: post %>
-              </div>
-              <i class="fas fa-comment-alt"></i><%= post.post_comments.count %>
-          </div>
-          <div class="row justify-content-around">
-              <%= post.shooting_date %>
-              <%= link_to post_path(@customer.id) do %>
-                <%= image_tag post.customer.get_profile_image(40,40) ,class: "rounded-circle"%>
-              <% end %>
-              <%= post.customer.nick_name %>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+  <%= render 'shared/posts/index', posts: @posts, customer: @customer %>
 </div>

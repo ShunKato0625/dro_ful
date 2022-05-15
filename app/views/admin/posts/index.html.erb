@@ -1,39 +1,7 @@
-<table class="table table-striped">
-       <h3 class="mini-title">投稿一覧</h3>
-       <div class="form-inline d-block text-right">
-            <%= form_with url: "#",method: :get, local: true do |f| %>
-              <%= f.text_field :keyword , placeholder:"キーワードで検索" %>
-              <%= f.button :type => "submit", class: "btn btn-outline-success" do %>
-                <i class="fas fa-search"></i>
-              <% end %>
-            <% end %>
-          </div>
-          <tbody>
-          <% @posts.each do |post| %>
-            <tr>
-              <td>
-                <% if post.image.attached?%>
-                <%= image_tag post.image, size: "210x150" %>
-                <% end %>
-              </td>
-              <td>
-                <%= link_to admin_post_path(post.id) do %>
-                <%= image_tag post.customer.profile_image,size:"40x40" %>
-                <% end %>
-                <td><%= post.customer.nick_name %></td>
-              </td>
-              <td><%= link_to post.title, admin_post_path(post.id) %></td>
-              <td><%= post.prefecture_id %></td>
-              <td>
-                <i class="fas fa-thumbs-up" aria-hidden="true"></i>
-                <%= post.favorites.count %>
-              </td>
-              <td><i class="fas fa-comment-alt"></i><%= post.post_comments.count %></td>
-              <td><%= render "public/posts/static_rate", post: post %></td>
-
-              <td>閲覧数：<%= post.impressions_count %></td>
-              <td><%= post.shooting_date %></td>
-            </tr>
-          <% end %>
-          </tbody>
-      </table>
+<div class="container">
+  <div class="row">
+    <h3 class="col mini-title">投稿一覧</h3>
+      <%= render 'shared/searches/search_form_post' %>
+  </div>
+  <%= render 'shared/posts/index', posts: @posts, customer: @customer %>
+</div>

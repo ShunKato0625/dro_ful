@@ -30,6 +30,10 @@ class Admin::PostsController < ApplicationController
     flash[:notice] = "post was successfully destroyed."
   end
 
+  def favorited_by?(admin)
+    favorites.exists?(admin: admin)
+  end
+
   private
 
     def post_params

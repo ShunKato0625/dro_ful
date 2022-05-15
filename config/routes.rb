@@ -14,7 +14,7 @@ Rails.application.routes.draw do
       get 'unsubscribe' => 'customers#unsubscribe'
       patch 'withdraw' => 'customers#withdraw'
     end
-    get 'search'=> 'searches#search_customer'
+    get 'search_customer'=> 'searches#search_customer'
   end
 
   # 管理者用
@@ -25,7 +25,6 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'homes#top'
     resources :customers, only: [:index, :show, :edit, :update] do
-      get 'post_index' => 'customers#post_index'
     end
     get 'search'=> 'searches#search_customer'
     resources :posts, only: [:index, :show, :edit, :update, :destroy]
@@ -39,7 +38,7 @@ Rails.application.routes.draw do
       resources :post_comments, only: [:index, :create, :destroy]
       resource :favorites, only: [:create, :destroy]
     end
-    get 'search'=> 'searches#search_post'
+    get 'search_post'=> 'searches#search_post'
   end
 
 end

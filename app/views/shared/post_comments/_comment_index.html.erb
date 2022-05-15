@@ -3,7 +3,7 @@
     <div class="mb-4 p-3 alert alert-light shadow">
       <div class="row d-flex mr-4">
         <div class="col">
-        <%= link_to customer_path(@customer.id) do %>
+        <%= link_to customer_path(customer.id) do %>
           <%= image_tag post_comment.customer. get_profile_image(40,40),class: "rounded-circle" %>
           <%= post_comment.customer.nick_name %>
         <% end %>

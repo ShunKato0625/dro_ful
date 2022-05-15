@@ -17,8 +17,10 @@ class Customer < ApplicationRecord
   validates :first_name_kana , presence: true
   validates :nick_name       , presence: true,
                                uniqueness: true
-  # validates :introduction    , presence: true
+  #validates :introduction    , presence: true
+  #自己紹介はバリデーションをかけない
 
+  #デフォルトプロフィール画像の設定
   def get_profile_image(width, height)
     unless profile_image.attached?
       file_path = Rails.root.join('app/assets/images/no_image.jpeg')
@@ -32,7 +34,7 @@ class Customer < ApplicationRecord
     super && (is_deleted == false)
   end
 
-  def self.search_customer(search)
+  def self.search_customer(search)    #会員はニックネームで検索
       Customer.where('nick_name LIKE(?)',"%#{search}%")
   end
 

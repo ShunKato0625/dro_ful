@@ -32,9 +32,20 @@ class Post < ApplicationRecord
     favorites.exists?(customer_id: customer.id)
   end
 
+  #投稿はタイトル名、都道府県名、申請の名前で検索可能。いずれも部分一致。
   def self.search_post(search)
-      Post.where(['title LIKE(?) OR prefecture_id LIKE(?) OR request LIKE(?)',
-                  "%#{search}%", "%#{search}%", "%#{search}%"])
+    prefecture = Prefecture.find_by(name: search)
+    if prefecture != nil
+      Post.where(prefecture_id: prefecture)
+    else
+      Post.where(['title LIKE(?) OR request LIKE(?)',
+                  "%#{search}%", "%#{search}%"])
+    end
+  end
+
+  # 配列の"[" "]"を消して文字列の配列にして返す
+  def get_request_strings
+    self.request.split(',').map {|m| m.delete('[]"\\\\')}
   end
 
 

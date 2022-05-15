@@ -1,0 +1,74 @@
+<div class='row pt-5'>
+    <div class="col-6 text-center ">
+      <%= image_tag post.image,size: "480x360" %>
+      <div class="row justify-content-center" style="line-height:40px">
+          撮影日：<%= post.shooting_date %>
+      </div>
+        <%= link_to customers_path(post.customer.id) do %>
+      <div class="row justify-content-center px-3" style="line-height:40px">
+          投稿者：<%= image_tag post.customer.get_profile_image(40,40) ,class: "profile_image mx-3" %>
+                  <%= customer.nick_name %>
+      </div>
+    　   <% end %>
+      <div class="row" style="line-height:40px">
+        <div class="col d-flex justify-content-end">
+          <i class="fas fa-eye"></i><%= post.impressions_count %>
+        </div>
+        <div class="col d-flex justify-content-start">
+          <div id ="favorite_btn_<%= post.id %>">
+            <%= render 'public/favorites/favorite', post: post %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6 post-show">
+      <div class="row">
+        撮影場所：<%= post.title %>
+      </div>
+      <div class="row">
+        都道府県：<%= post.prefecture.name %>
+      </div>
+      <div class="row">
+        アクセス：<%= post.access %>
+      </div>
+      <div class="row">
+        機体名：<%= post.drone_type %>
+      </div>
+      <div class="row">
+        申請：<% post.get_request_strings.each_with_index do |req, index| %>
+        <%= req %><% if index != post.get_request_strings.size - 1%>,&nbsp;<%end%>
+        <%end%>
+      </div>
+      <div class="row">
+        許可：<%= post.authorization %>
+      </div>
+      <div class="row">
+        オススメ度：<%= render "shared/posts/static_rate", post: post %>
+      </div>
+      <div class="row">
+        備考欄：<%= post.remarks %>
+      </div>
+      <div class="row justify-content-around">
+        <% if @post.customer.id == current_customer.id || admin_signed_in?  %>
+          <%= link_to "投稿を編集する", "#(post.id)", class: "btn btn-success btn-sm" %>
+          <%= link_to "投稿を削除する","#(post.id)",method: :delete, "data-confirm" => "Are you sure?" ,class: "btn btn-danger btn-sm"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div id="comments_area_<%= post.id %>">
+        <%= render 'shared/post_comments/comment_index', post: post, customer: customer %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div  id="comment_form">
+        <%= render "shared/post_comments/comment_form", post: post, post_comment: post_comment %>
+      </div>
+    </div>
+  </div>

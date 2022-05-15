@@ -1,15 +1,18 @@
 class Public::CustomersController < ApplicationController
   before_action :authenticate_customer!
-  #before_action :ensure_correct_customer, only: [:edit, :update]
+  # before_action :ensure_correct_customer, only: [:edit, :update]
 
   def index
-    @customers = Customer.all#.page(params[:page]).per(10)
+    @customers = Customer.all.page(params[:page]).per(6)
   end
 
   def show
     @customer = Customer.find(params[:id])
-    @post = Post.new
-    @posts = @customer.posts
+    @posts = @customer.posts.page(params[:page]).per(6)
+    if @customer.id == current_customer.id
+      redirect_to customer_my_page_path(@customer.id)  #自分を選択した時はマイページに遷移させる
+    end
+
   end
 
   def edit
@@ -30,6 +33,7 @@ class Public::CustomersController < ApplicationController
 
   def mypage
     @customer = current_customer
+    @posts = @customer.posts.page(params[:page]).per(6)
     @favorites = Favorite.where(customer_id: current_customer.id)
   end
 
