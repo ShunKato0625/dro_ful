@@ -29,12 +29,16 @@ class Public::PostsController < ApplicationController
     impressionist(@post, nil, unique: [:session_hash])
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
   def update
     @post = Post.find(params[:id])
     @post.customer_id = current_customer.id
     if @post.update(post_params)
-      redirect_to post_path(@post), notice: '投稿内容を更新しました'
-    else
+      flash[:notice] = "投稿内容を更新しました"
+      redirect_to post_path(@post)
       render "edit"
     end
   end

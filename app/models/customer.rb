@@ -29,12 +29,13 @@ class Customer < ApplicationRecord
     profile_image.variant(resize_to_limit: [width, height]).processed
   end
 
+  # is_deletedがfalseならtrueを返すようにする
   def active_for_authentication?
-    # is_deletedがfalseならtrueを返すようにする
     super && (is_deleted == false)
   end
 
-  def self.search_customer(search)    #会員はニックネームで検索
+  #会員はニックネームで検索
+  def self.search_customer(search)
       Customer.where('nick_name LIKE(?)',"%#{search}%")
   end
 

@@ -1,0 +1,86 @@
+<div class="row px-5 mx-5">
+  <div class="col-12">
+    <div id="error" class="mb-1"><%= render 'layouts/errors', obj: post %></div>
+      <%= form_with model:post, url:admin_post_path(post), method: :patch do |f| %>
+      　<div class="field form-group row">
+          <%= f.label :撮影画像, class: "col-2" %>
+          <%= f.file_field :image, accept: "image/*", class:"col-10" %>
+        </div>
+        <div class="form-group row">
+          <%= f.label :撮影場所, class: "col-2" %>
+          <%= f.text_field :title, class:"form-control post_title col-10" %>
+        </div>
+         <div class="form-group row">
+          <%= f.label :都道府県, class: "col-2" %>
+          <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name,{include_blank: "---"} ) %>
+        </div>
+        <div class="form-group row">
+          <%= f.label :撮影日, class: "col-2" %>
+          <%= f.date_field :shooting_date, class:"form-control post_shooting_date col-3" %>
+        </div>
+        <div class="form-group row">
+          <%= f.label :アクセス, class: "col-2" %>
+          <%= f.text_area :access, class:"form-control post_access col-10" %>
+        </div>
+        <div class="form-group row">
+          <%= f.label :機体名, class: "col-2" %>
+          <%= f.text_field :drone_type, class:"form-control post_drone_type col-10" %>
+        </div>
+
+        <div class="form-group row">
+          <%= f.label :許可取り, class: "col-2" %>
+          <%= f.text_area :authorization, class:"form-control post_authorization col-10" %>
+        </div>
+
+        <div class="form-group row">
+          <%= f.label :申請の種類, class: "col-2" %>
+          <div class="col-10">
+            <%= f.check_box :request, {multiple: true}, "該当なし", nil  %>該当なし
+          </div>
+          <div class="offset-2 col-10">
+            <%= f.check_box :request, {multiple: true}, "空港などの周辺地域の上空", nil %>空港などの周辺地域の上空
+            <%= f.check_box :request, {multiple: true}, "緊急用務空域", nil %>緊急用務空域
+            <%= f.check_box :request, {multiple: true}, "150m以上での高さでの飛行", nil %>150m以上での高さでの飛行
+            <%= f.check_box :request, {multiple: true}, "人工集中地区の上空", nil %>人工集中地区の上空
+          </div>
+          <div class="offset-2 col-10">
+            <%= f.check_box :request, {multiple: true}, "夜間飛行", nil %>夜間飛行
+            <%= f.check_box :request, {multiple: true}, "目視外飛行", nil %>目視外飛行
+            <%= f.check_box :request, {multiple: true}, "人・物・車等の30m未満飛行", nil %>人・物・車等の30m未満飛行
+            <%= f.check_box :request, {multiple: true}, "イベント上空飛行", nil %>イベント上空飛行
+            <%= f.check_box :request, {multiple: true}, "危険物輸送", nil %>危険物輸送
+            <%= f.check_box :request, {multiple: true}, "物件投下", nil %>物件投下
+          </div>
+        </div>
+
+        <%# if post.id === nil %>
+        <div class="form-group row" id="star">
+          <%= f.label :オススメ度, class: "col-2" %>
+          <%= f.hidden_field :rate, id: :review_star, class:'form-control col-10' %>
+
+          <script>
+            $('#star').raty({
+              size     : 36,
+              starOff:  "<%= asset_path('star-off.png') %>",
+              starOn : "<%= asset_path('star-on.png') %>",
+              starHalf: "<%= asset_path('star-half.png') %>",
+              scoreName: 'post[rate]',
+              half: true,
+            });
+          </script>
+          <%# else %>
+            <%#= render "shared/posts/static_rate", post: post %>
+          <%# end %>
+        </div>
+
+        <div class="form-group row">
+          <%= f.label :備考欄 , class:"col-2" %>
+          <%= f.text_area :remarks, class:"form-control post_remarks col-10" %>
+        </div>
+
+        <div class="form-group row">
+          <%= f.submit "変更する", class:"btn btn-success" %>
+        </div>
+      <% end %>
+  </div>
+</div>

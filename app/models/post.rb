@@ -32,7 +32,7 @@ class Post < ApplicationRecord
     favorites.exists?(customer_id: customer.id)
   end
 
-  #投稿はタイトル名、都道府県名、申請の名前で検索可能。いずれも部分一致。
+  # 投稿はタイトル名、都道府県名、申請の名前で検索可能。いずれも部分一致
   def self.search_post(search)
     prefecture = Prefecture.find_by(name: search)
     if prefecture != nil
