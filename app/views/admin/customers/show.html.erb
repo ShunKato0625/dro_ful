@@ -1,56 +1,8 @@
-<div class="row">
-  <div class="col-11 offset-1">
-    <h3 class="mb-5 mini-title"><%= @customer.nick_name %>さんの会員詳細</h3>
-
-    <table class="table table-borderless">
-      <tr class="address-index-button">
-        <th class="col-2"><h3><b>登録情報</b></h3></th>
-        <td><%= link_to '編集する', edit_admin_customer_path(@customer), class: "btn btn-success col-2" %></td>
-      </tr>
-    </table>
-
-    <table class="table table-bordered col-7 ml-3 mb-4 table-background">
-      <tbody>
-        <tr>
-          <td>会員ID</td>
-          <td><%= @customer.id %></td>
-        </tr>
-        <tr>
-          <th class="col-4 table-active">氏名</th>
-          <td><%= @customer.last_name %>　<%= @customer.first_name %></td>
-        </tr>
-        <tr>
-          <th class="table-active">カナ</th>
-          <td><%= @customer.last_name_kana %>　<%= @customer.first_name_kana %></td>
-        <tr>
-          <th class="table-active">ニックネーム</th>
-          <td><%= @customer.nick_name %></td>
-        </tr>
-        <tr>
-          <th class="table-active">メールアドレス</th>
-          <td><%= @customer.email %></td>
-        </tr>
-        <tr>
-        <td>会員ステータス</td>
-        <td>
-          <% if @customer.active_for_authentication? %>
-            <b class="text-success">有効</b>
-          <% else %>
-            <b class="text-muted">退会</b>
-          <% end %>
-        </td>
-      </tr>
-      </tbody>
-
-       <%= image_tag @customer.profile_image,size:"200x200" %>
-
-      </table>
-    <table class="table table-borderless ml-0 mb-5">
-      <tr class="post-index-button">
-        <th class="col-2"><h3><b>投稿履歴</b></h3></th>
-        <td><%= link_to '一覧を見る', posts_path, class: "btn btn-primary col-3" %></td>
-      </tr>
-    </table>
-
+<div class="container">
+  <div class="row">
+    <div class="col-11 offset-1">
+      <h3 class="mb-5 mini-title"><%= @customer.nick_name %>さんの会員詳細</h3>
+    </div>
   </div>
+  <%= render 'admin/customers/customer_show_admin', posts: @posts, customer: @customer %>
 </div>

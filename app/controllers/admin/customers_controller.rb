@@ -7,6 +7,7 @@ class Admin::CustomersController < ApplicationController
 
   def show
     @customer = Customer.find(params[:id])
+    @posts = @customer.posts.page(params[:page]).per(6)
   end
 
   def edit

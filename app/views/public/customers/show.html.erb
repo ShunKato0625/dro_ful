@@ -4,5 +4,5 @@
       <h3 class="mb-5 mini-title"><%=@customer.nick_name %>さんのページ</h3>
     </div>
   </div>
-  <%= render 'shared/customer/show', posts: @posts, customer: @customer %>
+  <%= render 'public/customers/customer_show_public', posts: @posts, customer: @customer %>
 </div>

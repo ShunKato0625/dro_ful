@@ -5,7 +5,7 @@
 
 <div class="px-5 mx-5 row">
   <div class="col-11">
-    <%= form_with model:@customer, url: admin_customers_path, method: :patch do |f| %>
+    <%= form_with model:@customer, url: admin_customer_path, method: :patch do |f| %>
       <div class="form-group row">
         <%= f.label :プロフィール画像, class: "col-3" %>
         <%= f.file_field :profile_image, class:"form-control-file col-3" %>

@@ -42,7 +42,7 @@
     </div>
 
     <h3>投稿履歴</h3>
-      <%= render 'shared/posts/index', posts: @posts, customer: @customer %>
+      <%= render 'public/posts/post_index_public', posts: @posts, customer: @customer %>
 
     <h3>ブックマーク一覧</h3>
       <%= render 'shared/customers/bookmark', favorites: @favorites %>
