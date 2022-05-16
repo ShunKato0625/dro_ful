@@ -1,1 +1,1 @@
-$("#comments_area_<%= @post.id %>").html("<%= j(render 'public/post_comments/comment_index_public', post: @post ) %>");
+$("#comments_area_<%= @post.id %>").html("<%= j(render 'public/post_comments/comment_index_public', post: @post, customer: @customer) %>");
