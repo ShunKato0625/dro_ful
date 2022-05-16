@@ -1,7 +1,9 @@
-<div class="container">
+<div class="container py-5">
   <div class="row">
-    <h3 class="col mini-title">投稿一覧</h3>
-      <%= render 'shared/searches/search_form_post' %>
+    <div class="col-5 text-center">
+      <h2 class="heading " data-en="PostIndex">投稿一覧</h2>
+    </div>
+    <%= render 'admin/searches/search_form_post_admin' %>
   </div>
-  <%= render 'admin/posts/post_index_admin', posts: @posts, customer: @customer %>
+    <%= render 'admin/posts/post_index_admin', posts: @posts, customer: @customer %>
 </div>

@@ -1,7 +1,7 @@
 <div class="container py-5">
   <div class="row">
     <div class="col-11 offset-1">
-      <h3 class="mb-5"><%= @customer.nick_name %>さんの会員詳細</h3>
+      <h2 class="heading mb-5" data-en="CustomerDetail"><%= @customer.nick_name %>さんの会員詳細</h2>
     </div>
   </div>
   <%= render 'admin/customers/customer_show_admin', posts: @posts, customer: @customer %>

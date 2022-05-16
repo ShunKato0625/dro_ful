@@ -14,13 +14,20 @@
  *= require_self
  */
 
+ *{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   color:#333333;
+ }
+
 body {
   background-image: image-url("sky.webp");
   background-size: cover;
 }
 
 main {
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(255,255,255,0.1);
 }
 
 header {
@@ -54,12 +61,57 @@ footer {
   font-size:17px;
 }
 
-.show-card {
-  background-color: white;
+.post-show-card {
+  background-color: #fffafa;
   opacity: 0.9;
   border-radius: 0.5em;
 }
 
 .profile_image {
   border-radius: 50%;
+}
+
+[role="link"] {
+  cursor: pointer;
+}
+
+.pagination>li>a {
+  border: none;
+  color: #0066cc !important;
+}
+
+.pagination>.active>a {
+  background: #0066cc !important;
+  color: #fff !important
+}
+
+.pagination>li>a:hover {
+  background-color: #0066cc !important;
+  color: #fff !important;
+}
+
+.heading {
+	position: relative;
+	padding-top: 50px;
+	padding-left: 30px;
+	font-size: 26px;
+}
+
+.heading span {
+	position: relative;
+	z-index: 2;
+}
+
+.heading::before {
+	content: attr(data-en);      //テキストを読み込み、スタイルを指定
+	position: absolute;
+	transform: rotate(-5deg);    //テキストを斜めに表現
+	top: -7px;
+	left: 50px;
+	color: #0000ee;
+	opacity: 0.5;
+	font-size: 60px;
+	font-weight: 400;
+	font-family: luxus-brut, cursive;
+	font-style: italic;
 }

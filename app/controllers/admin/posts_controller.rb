@@ -2,12 +2,14 @@ class Admin::PostsController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-    @posts = Post.all.page(params[:page]).per(9)
+    @posts = Post.all.page(params[:page]).per(8)
   end
 
   def show
     @post = Post.find(params[:id])
     @post_comment = PostComment.new
+    @post_comments = @post.post_comments.order(created_at: :desc)
+    impressionist(@post, nil, unique: [:session_hash])
   end
 
   def edit

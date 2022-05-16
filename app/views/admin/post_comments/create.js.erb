@@ -1,0 +1,2 @@
+$('#comments_area_<%= @post.id %>').html("<%= j(render 'admin/post_comments/comment_index_admin', post: @post, customer: @customer) %>");
+$("textarea").val('');
