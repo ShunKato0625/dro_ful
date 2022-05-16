@@ -26,10 +26,10 @@ Rails.application.routes.draw do
     root 'homes#top'
     resources :customers, only: [:index, :show, :edit, :update] do
     end
-    get 'search'=> 'searches#search_customer'
+    get 'search_customer'=> 'searches#search_customer'
     resources :posts, only: [:index, :show, :edit, :update, :destroy]
       resources :post_comments, only: [:index, :create, :destroy]
-    get 'search'=> 'searches#search_post'
+    get 'search_post'=> 'searches#search_post'
   end
 
   scope module: :public do

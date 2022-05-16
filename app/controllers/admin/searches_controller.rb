@@ -10,6 +10,6 @@ class Admin::SearchesController < ApplicationController
   def search_customer
     # @content = params[:content]
     # @records = Post.where(is_active: 1).search_for(@content).page(params[:page]).per(6)
-    @customer = Customer.search_customer(params[:keyword])
+    @customers = Customer.search_customer(params[:keyword])
   end
 end
