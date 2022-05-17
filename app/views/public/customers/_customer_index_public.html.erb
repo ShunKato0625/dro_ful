@@ -1,17 +1,13 @@
-<div class="row justify-content-around">
-  <!--<table class="table border-bottom table-hover table-background">-->
-    <% @customers.each do |customer| %>
-      <!--<tr onclick='window.location="<%#= '/admin/customers/' + customer.id.to_s %>"' role="link">-->
-        <div class="col-3 my-2 mx-2 pt-2 border table-background text-center">
-          <%= link_to customer_path(customer.id) do %>
-            <%= image_tag customer.get_profile_image(200,200), class: "rounded-circle" %>
-            <p class="text-dark mt-4"><%= customer.nick_name %></p>
-          <% end %>
-            <p><%= customer.introduction %></p>
-        </div>
-    <% end %>
-  <!--</table>-->
-  </div>
-  <div class="d-flex justify-content-center pt-5">
-    <%= paginate customers %>
-  </div>
+<div class="row">
+  <% customers.each do |customer| %>
+    <div class="my-2 mx-1 p-2 border table-background text-center">
+      <div onclick='window.location="<%= '/customers/' + customer.id.to_s %>"' role="link">
+        <%= link_to customer_path(customer.id) do %>
+          <%= image_tag customer.get_profile_image(200,200), class: "rounded-circle" %>
+          <p class="text-dark mt-4"><%= customer.nick_name %></p>
+        <% end %>
+          <p><%= customer.introduction %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

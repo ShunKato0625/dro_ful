@@ -1,0 +1,5 @@
+<% if posts.exists? %>
+  <%= render 'admin/posts/post_index_admin', posts: @posts, customer: @customer %>
+<% else %>
+  <div class="h2 row text-center col-6 mt-5 ml-3">一致する検索結果がありません</div>
+<% end %>

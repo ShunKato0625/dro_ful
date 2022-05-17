@@ -3,7 +3,7 @@ class Public::CustomersController < ApplicationController
   # before_action :ensure_correct_customer, only: [:edit, :update]
 
   def index
-    @customers = Customer.all.page(params[:page]).per(6)
+    @customers = Customer.all.where(is_deleted: false).page(params[:page]).per(10)
   end
 
   def show
@@ -34,7 +34,7 @@ class Public::CustomersController < ApplicationController
   def mypage
     @customer = current_customer
     @posts = @customer.posts.page(params[:page]).per(4)
-    @favorites = Favorite.where(customer_id: current_customer.id).page(params[:page]).per(2)
+    @favorites = Favorite.where(customer_id: current_customer.id).page(params[:page]).per(4)
     return unless request.xhr?
     case params[:type]
     when 'favorite', 'post'
