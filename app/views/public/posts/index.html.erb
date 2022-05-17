@@ -6,4 +6,7 @@
       <%= render 'public/searches/search_form_post_public' %>
   </div>
   <%= render 'public/posts/post_index_public', posts: @posts, customer: @customer %>
+  <div class="d-flex justify-content-center pt-5">
+    <%= paginate @posts %>
+  </div>
 </div>

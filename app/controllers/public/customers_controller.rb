@@ -33,8 +33,8 @@ class Public::CustomersController < ApplicationController
 
   def mypage
     @customer = current_customer
-    @posts = @customer.posts.page(params[:page]).per(6)
-    @favorites = Favorite.where(customer_id: current_customer.id)
+    @posts = @customer.posts.page(params[:page]).per(4)
+    @favorites = Favorite.where(customer_id: current_customer.id).page(params[:page]).per(2)
   end
 
   def destroy

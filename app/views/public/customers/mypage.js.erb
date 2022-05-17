@@ -1,0 +1,7 @@
+$('#bookmark').append("<%= escape_javascript(render 'shared/customers/bookmark', favorites: @favorites , post: @post ) %>");
+$("#view_more").replaceWith("<%= escape_javascript(
+link_to_next_page(@favorites, 'もっと見る', remote: true, id: 'view_more')) %>");
+
+$('#post_index').append("<%= escape_javascript(render 'public/posts/post_index_public', posts: @posts, customer: @customer ) %>");
+$("#view_more_post").replaceWith("<%= escape_javascript(
+link_to_next_page(@posts, 'もっと見る', remote: true, id: 'view_more_post')) %>");
