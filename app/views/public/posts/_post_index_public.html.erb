@@ -1,6 +1,6 @@
  <div class="row justify-content-center">
     <% posts.each do |post| %>
-      <div class = "col-3 my-2 mx-2 pt-2 table-background text-center" >
+      <div class = "my-2 mx-1 p-2 table-background text-center" >
         <%= link_to post_path(post.id) do %>
           <%= image_tag post.image, size: "250x220" %>
           <div class="row justify-content-around">
@@ -22,14 +22,16 @@
               <i class="fas fa-comment-alt"></i><%= post.post_comments.count %>
           </div>
           <div class="row justify-content-around">
-              <%= post.shooting_date %>
-                <%= link_to post_path(customer.id) do %>
-                  <%= image_tag post.customer.get_profile_image(40,40) ,class: "rounded-circle"%>
-                <% end %>
-              <%= post.customer.nick_name %>
+            <%= post.shooting_date %>
+              <%= link_to post_path(customer.id) do %>
+                <%= image_tag post.customer.get_profile_image(40,40) ,class: "rounded-circle"%>
+                <%= post.customer.nick_name %>
+              <% end %>
           </div>
         <% end %>
       </div>
     <% end %>
   </div>
-  <%= paginate posts %>
+  <div class="d-flex justify-content-center pt-5">
+    <%= paginate posts %>
+  </div>

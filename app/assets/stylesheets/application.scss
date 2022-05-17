@@ -42,8 +42,8 @@ footer {
 }
 
 .mini-title {
-    color: 	#FF5192;/*文字色*/
-  border: solid 3px #FF5192;/*線色*/
+    color: 	#0000ee;/*文字色*/
+  border: solid 3px #0000ee;/*線色*/
   padding: 0.5em;/*文字周りの余白*/
   border-radius: 0.5em;/*角丸*/
   display: inline-block;
@@ -114,4 +114,8 @@ footer {
 	font-weight: 400;
 	font-family: luxus-brut, cursive;
 	font-style: italic;
+}
+
+.signup,.signin{
+  color: #FFF;
 }

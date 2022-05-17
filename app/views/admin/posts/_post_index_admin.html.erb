@@ -19,11 +19,11 @@
               <i class="fas fa-comment-alt"></i><%= post.post_comments.count %>
           </div>
           <div class="row justify-content-around">
-              <%= post.shooting_date %>
-                <%= link_to admin_customer_path(post.customer.id) do %>
-                  <%= image_tag post.customer.get_profile_image(40,40) ,class: "rounded-circle" %>
-                  <%= post.customer.nick_name %>
-                <% end %>
+            <%= post.shooting_date %>
+              <%= link_to admin_customer_path(post.customer.id) do %>
+                <%= image_tag post.customer.get_profile_image(40,40) ,class: "rounded-circle" %>
+                <%= post.customer.nick_name %>
+              <% end %>
           </div>
         <% end %>
       </div>

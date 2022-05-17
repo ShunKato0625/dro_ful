@@ -19,7 +19,7 @@ class Public::PostsController < ApplicationController
 
   def index
     @customer = Customer.find(current_customer.id)
-    @posts = Post.all.page(params[:page]).per(9)
+    @posts = Post.all.page(params[:page]).per(8)
   end
 
   def show
@@ -40,6 +40,7 @@ class Public::PostsController < ApplicationController
     if @post.update(post_params)
       flash[:notice] = "投稿内容を更新しました"
       redirect_to post_path(@post)
+    else
       render "edit"
     end
   end

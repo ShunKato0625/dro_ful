@@ -1,6 +1,8 @@
-<div class="container">
+<div class="container py-5">
   <div class="row">
-    <h3 class="col mini-title">投稿一覧</h3>
+    <div class="col-5 text-center">
+      <h2 class="heading " data-en="PostIndex">投稿一覧</h2>
+    </div>
       <%= render 'public/searches/search_form_post_public' %>
   </div>
   <%= render 'public/posts/post_index_public', posts: @posts, customer: @customer %>

@@ -1,8 +1,8 @@
 <div class="container py-5">
   <div class="row">
-    <div class="col-11 offset-1">
-      <h3 class="mb-5"><%=@customer.nick_name %>さんのページ</h3>
+    <div class="col-5 text-center">
+      <h2 class="heading" data-en="MemberInfo"><%=@customer.nick_name %>さんのページ</h2>
     </div>
   </div>
-  <%= render 'public/customers/customer_show_public', posts: @posts, customer: @customer %>
+    <%= render 'public/customers/customer_show_public', posts: @posts, customer: @customer %>
 </div>
