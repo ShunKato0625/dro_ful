@@ -35,6 +35,11 @@ class Public::CustomersController < ApplicationController
     @customer = current_customer
     @posts = @customer.posts.page(params[:page]).per(4)
     @favorites = Favorite.where(customer_id: current_customer.id).page(params[:page]).per(2)
+    return unless request.xhr?
+    case params[:type]
+    when 'favorite', 'post'
+      render "#{params[:type]}"
+    end
   end
 
   def destroy

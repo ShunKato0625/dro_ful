@@ -1,0 +1,3 @@
+$('#bookmark').append("<%= escape_javascript(render 'shared/customers/bookmark', favorites: @favorites , post: @post ) %>");
+$("#view_more").replaceWith("<%= escape_javascript(
+link_to_next_page(@favorites, 'もっと見る', params: { type: :favorite }, remote: true, id: 'view_more')) %>");

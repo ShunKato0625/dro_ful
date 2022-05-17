@@ -1,0 +1,3 @@
+$('#post_index').append("<%= escape_javascript(render 'public/posts/post_index_public', posts: @posts, customer: @customer ) %>");
+$("#view_more_post").replaceWith("<%= escape_javascript(
+link_to_next_page(@posts, 'もっと見る', params: { type: :post }, remote: true, id: 'view_more_post')) %>");
