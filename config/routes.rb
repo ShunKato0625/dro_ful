@@ -27,8 +27,9 @@ Rails.application.routes.draw do
     resources :customers, only: [:index, :show, :edit, :update] do
     end
     get 'search_customer'=> 'searches#search_customer'
-    resources :posts, only: [:index, :show, :edit, :update, :destroy]
+    resources :posts, only: [:index, :show, :edit, :update, :destroy] do
       resources :post_comments, only: [:index, :create, :destroy]
+    end
     get 'search_post'=> 'searches#search_post'
   end
 

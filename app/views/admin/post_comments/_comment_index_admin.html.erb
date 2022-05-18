@@ -4,11 +4,11 @@
   </div>
 </div>
 <h6 class="more" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">もっと見る....</h6>
-  <% post.post_comments.first(2).each do |post_comment| %>
+  <% post.post_comments.order(created_at: :desc).first(2).each do |post_comment| %>
     <div class="mb-4 p-3 alert alert-light shadow">
       <div class="row d-flex mr-4">
         <div class="col">
-        <%= link_to customer_path(post.customer.id) do %>
+        <%= link_to admin_customer_path(post.customer.id) do %>
           <%= image_tag post_comment.customer. get_profile_image(40,40),class: "rounded-circle" %>
           <%= post_comment.customer.nick_name %>
         <% end %>
@@ -21,18 +21,22 @@
         <%= post_comment.comment %>
       </div>
       <div class="row px-3">
-          <%= link_to "Destroy", admin_post_comment_path(post, post_comment), method: :delete, class: "btn btn-danger pull_right", remote: true, data: {confirm: "本当に削除しますか？"}%>
+          <%= link_to "削除", admin_post_post_comment_path(post, post_comment), method: :delete, class: "btn btn-danger pull_right", remote: true, data: {confirm: "本当に削除しますか？"}%>
       </div>
     </div>
   <% end %>
   <div class="collapse" id="collapseExample">
-    <% post.post_comments.offset(2).each do |post_comment| %>
+    <% post.post_comments.order(created_at: :desc).offset(2).each do |post_comment| %>
       <div class="mb-4 p-3 alert alert-light shadow">
         <div class="row d-flex mr-4">
           <div class="col">
-          <%= link_to customer_path(post.customer.id) do %>
-            <%= image_tag post_comment.customer. get_profile_image(40,40),class: "rounded-circle" %>
-            <%= post_comment.customer.nick_name %>
+          <% if admin_signed_in? %>
+            <%= "管理者" %>
+          <% else %>
+            <%= link_to customer_path(post.customer.id) do %>
+              <%= image_tag post_comment.customer. get_profile_image(40,40),class: "rounded-circle" %>
+              <%= post_comment.customer.nick_name %>
+            <% end %>
           <% end %>
           </div>
           <div class="col d-flex justify-content-end" style="font-size:16px;">
@@ -43,7 +47,7 @@
           <%= post_comment.comment %>
         </div>
         <div class="row px-3">
-            <%= link_to "Destroy", admin_post_comment_path(post, post_comment), method: :delete, class: "btn btn-danger pull_right", remote: true, data: {confirm: "本当に削除しますか？"}%>
+            <%= link_to "削除", admin_post_post_comment_path(post, post_comment), method: :delete, class: "btn btn-danger pull_right", remote: true, data: {confirm: "本当に削除しますか？"}%>
         </div>
       </div>
     <% end %>
