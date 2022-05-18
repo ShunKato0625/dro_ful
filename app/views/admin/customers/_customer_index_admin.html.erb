@@ -3,10 +3,11 @@
     <thead class="thead-light">
       <tr>
         <th style="width: 10%">会員ID</th>
+        <th style="width: 10%"><!--ProfileImage--></th>
         <th style="width: 20%">氏名</th>
         <th style="width: 20%">ニックネーム</th>
-        <th style="width: 30%">メールアドレス</th>
-        <th style="width: 20%">ステータス</th>
+        <th style="width: 25%">メールアドレス</th>
+        <th style="width: 15%">ステータス</th>
       </tr>
     </thead>
     <tbody>
@@ -15,16 +16,19 @@
           <td class="py-4" style="width: 10%">
             <%= customer.id %>
           </td>
-          <td class="py-4" style="width: 20%">
-            <u><%= link_to customer.last_name+customer.first_name, admin_customer_path(customer), class:"text-dark" %></u>
+          <td class="py-4" style="width: 10%">
+            <%= image_tag customer.get_profile_image(40,40), class: "rounded-circle" %>
           </td>
           <td class="py-4" style="width: 20%">
-            <u><%= customer.nick_name %></u>
+            <%= link_to customer.last_name+customer.first_name, admin_customer_path(customer), class:"text-dark" %>
           </td>
-          <td class="py-4" style="width: 30%">
+          <td class="py-4" style="width: 20%">
+            <%= customer.nick_name %>
+          </td>
+          <td class="py-4" style="width: 25%">
             <%= customer.email %>
           </td>
-          <td class="py-4" style="width: 30%">
+          <td class="py-4" style="width: 15%">
             <% if customer.active_for_authentication? %>
               <b class="text-success">有効</b>
             <% else %>

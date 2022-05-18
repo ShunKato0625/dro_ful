@@ -23,7 +23,7 @@
           </div>
           <div class="row justify-content-around">
             <%= post.shooting_date %>
-              <%= link_to post_path(customer.id) do %>
+              <%= link_to customer_path(post.customer.id) do %>
                 <%= image_tag post.customer.get_profile_image(40,40) ,class: "rounded-circle"%>
                 <%= post.customer.nick_name %>
               <% end %>

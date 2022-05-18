@@ -18,8 +18,7 @@ class Public::PostsController < ApplicationController
   end
 
   def index
-    @customer = Customer.find(current_customer.id)
-    @posts = Post.all.page(params[:page]).per(8)
+    @posts = Post.all.page(params[:page]).per(8).order(created_at: :desc)
   end
 
   def show
