@@ -1,0 +1,23 @@
+ja:
+  activerecord:
+    attributes:
+      customer:
+        email: "メールアドレス"
+        password: "パスワード"
+        first_name: "名前"
+        last_name: "苗字"
+        first_name_kana: "名前(カナ)"
+        last_name_kana: "苗字(カナ)"
+        nick_name: "ニックネーム"
+        profile_image: "プロフィール画像"
+      post:
+        image: "撮影画像"
+        title: "撮影場所（タイトル）"
+        prefecture_id: "都道府県"
+        access: "アクセス"
+        drone_type: "機体名"
+        request: "申請項目"
+        rate: "オススメ度"
+        remarks: "備考欄"
+        shooting_date: "撮影日"
+        authorization: "許可項目"

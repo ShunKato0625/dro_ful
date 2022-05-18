@@ -26,7 +26,7 @@ class Public::CustomersController < ApplicationController
       flash[:notice] = "会員情報が更新されました"
       redirect_to customer_my_page_path(@customer.id)
     else
-      #@customer = current_customer
+      @customer = current_customer
       render 'public/customers/edit'
     end
   end

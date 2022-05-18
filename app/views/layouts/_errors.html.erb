@@ -1,10 +1,17 @@
 <% if obj.errors.any? %>
-  <div id="error_explanation">
-    <h3><%= pluralize(obj.errors.count, "件のエラー") %> </h3>
-    <ul>
-      <% obj.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
+  <div class = err_area>
+    <div id="error_explanation">
+      <ul class="err_mes_area ">
+        <% obj.errors.full_messages.each do |message| %>
+        <div class="alert alert-danger alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">close</span>
+          </button>
+          <%= message %>
+        </div>
+        <% end %>
+      </ul>
+  　</div>
+　</div>
 <% end %>
