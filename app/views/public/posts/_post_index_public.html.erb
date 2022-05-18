@@ -16,9 +16,11 @@
           </div>
           <div class="row justify-content-around">
               <i class="fas fa-eye"></i><%= post.impressions_count %>
-              <div id ="favorite_btn_<%= post.id %>">
-                <%= render 'public/favorites/favorite', post: post %>
-              </div>
+              <% if customer_signed_in? %>
+                <div id ="favorite_btn_<%= post.id %>">
+                  <%= render 'public/favorites/favorite', post: post %>
+                </div>
+              <% end %>
               <i class="fas fa-comment-alt"></i><%= post.post_comments.count %>
           </div>
           <div class="row justify-content-around">
