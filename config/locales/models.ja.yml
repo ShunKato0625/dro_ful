@@ -21,3 +21,5 @@ ja:
         remarks: "備考欄"
         shooting_date: "撮影日"
         authorization: "許可項目"
+      post_comment:
+        comment: "コメント"
