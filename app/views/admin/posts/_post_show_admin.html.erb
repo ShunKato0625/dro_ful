@@ -19,11 +19,8 @@
           <i class="fas fa-eye"></i><%= post.impressions_count %>
         </div>
         <div class="col d-flex justify-content-start">
-          <% if customer_signed_in? %>
-            <div id ="favorite_btn_<%= post.id %>">
-              <%= render 'public/favorites/favorite', post: post %>
-            </div>
-          <% end %>
+          <i class="fas fa-thumbs-up" aria-hidden="true" style="color: black;"></i>
+          <%= post.favorites.count %>
         </div>
       </div>
     </div>

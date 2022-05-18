@@ -33,6 +33,7 @@ class Admin::PostsController < ApplicationController
     flash[:notice] = "投稿を削除しました"
   end
 
+
   private
 
     def post_params
