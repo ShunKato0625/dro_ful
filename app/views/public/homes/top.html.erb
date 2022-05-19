@@ -5,4 +5,86 @@
   </span>
 </div>
 
+<a href="#" class="js-modal-open" data-target="modal-top">あなたの空撮をサポート致します。</a>
+
+<div id="modal-top" class="modal js-modal">
+  <div class="modal-bg js-modal-close">
+  </div>
+    <div class="modal-content">
+      <p>同一ページに複数のモーダルウィンドウが存在する場合。同一ページに複数のモーダルウィンドウが存在する場合。</p>
+      <a href="#" class="js-modal-open" data-target="modal-question-1">質問1を開く</a>
+      <a href="#" class="js-modal-close">閉じる</a>
+    </div>
+</div>
+
+<div id="modal-question-1" class="modal js-modal">
+  <div class="modal-bg js-modal-close">
+  </div>
+    <div class="modal-content">
+      <div class="question">
+        <h1>ソーシャルスタイル診断</h1>
+    <ul class="questions">
+      <li class="textBox">
+        <span class="text">Q1. 冷静で人からの指示は嫌い</span><!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+    %button 診断する
+      <a href="#" class="js-modal-open" data-target="modal-question-2">質問2に進む</a>
+      <a href="#" class="js-modal-close">閉じる</a>
+    </div>
+</div>
+
+<div id="modal-question-2" class="modal js-modal">
+  <div class="modal-bg js-modal-close">
+  </div>
+    <div class="modal-content">
+      <p>ここにコンテンツ2が入ります。ここにコンテンツ2が入ります。ここにコンテンツ2が入ります。</p>
+      <a href="#" class="js-modal-open" data-target="modal-question-1">質問1に戻る</a>
+      <a href="#" class="js-modal-close">閉じる</a>
+    </div>
+</div>
+
+<script>
+// モーダルウィンドウを開く
+$('.js-modal-open').on('click', function(){
+  var target = $(this).data('target');
+  var modal = document.getElementById(target);
+  scrollPosition = $(window).scrollTop();
+
+  $('body').addClass('fixed').css({'top': -scrollPosition});
+  $(modal).fadeIn();
+  return false;
+});
+
+// モーダルウィンドウを閉じる
+$('.js-modal-close').on('click', function(){
+  $('body').removeClass('fixed');
+  window.scrollTo( 0 , scrollPosition );
+  $('.js-modal').fadeOut();
+  return false;
+});
+</script>
+
 <%= javascript_pack_tag 'user/application' %>

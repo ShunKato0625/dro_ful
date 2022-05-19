@@ -42,12 +42,6 @@ class Public::CustomersController < ApplicationController
     end
   end
 
-  def destroy
-  end
-
-  def unsubscribe
-  end
-
   def withdraw
     current_customer.update(is_deleted: true)
     reset_session

@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   scope module: :public do
     resources :customers, only: [:index, :show, :edit, :update] do
       get 'my_page' => 'customers#mypage'
-      get 'unsubscribe' => 'customers#unsubscribe'
       patch 'withdraw' => 'customers#withdraw'
     end
     get 'search_customer'=> 'searches#search_customer'
