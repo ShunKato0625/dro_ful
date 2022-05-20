@@ -3,72 +3,344 @@
     <span class="text-light">no drone no life </span>
     <span class="text-light">Dro-Ful</span>
   </span>
+  <span href="#" class="js-modal-top btn btn-danger col-3 offset-1" data-target="modal-top">
+    あなたの空撮をサポートします!<br>
+    こちらをクリック！！
+  </span>
 </div>
-
-<a href="#" class="js-modal-open" data-target="modal-top">あなたの空撮をサポート致します。</a>
 
 <div id="modal-top" class="modal js-modal">
   <div class="modal-bg js-modal-close">
   </div>
-    <div class="modal-content">
-      <p>同一ページに複数のモーダルウィンドウが存在する場合。同一ページに複数のモーダルウィンドウが存在する場合。</p>
-      <a href="#" class="js-modal-open" data-target="modal-question-1">質問1を開く</a>
-      <a href="#" class="js-modal-close">閉じる</a>
+    <div class="modal-content-js">
+      <div type="button" class="close js-modal-close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </div>
+      <h2>ドローン初心者サポート！ToDoリスト</h2>
+      <p>
+        こちらではドローン空撮を行うにあたって<br>
+        『結局、自分はなにをすべきなのかわからない！』<br>
+        そんなあなたに空撮に必要なやるべき事をリストアップしております！<br>
+        この機能を活用いただき、詳しい事はこのコミュニティーのメンバーとの<br>
+        コメントでの交流やご自身で調べながら、空撮ライフを満喫してください！
+      </p>
+      <p>
+        ※あくまでサポート的な機能ですので、参考程度に留めて頂くようお願いいたします。
+        トラブル等には一切の責任を負いかねますので
+      </p>
+      <a href="#" class="btn btn-success js-modal-open" data-target="modal-questions">Let's Get Ready!!</a>
+      <a href="#" class="btn btn-secondary js-modal-close">閉じる</a>
     </div>
 </div>
 
-<div id="modal-question-1" class="modal js-modal">
+<div id="modal-questions" class="modal js-modal">
   <div class="modal-bg js-modal-close">
   </div>
-    <div class="modal-content">
-      <div class="question">
-        <h1>ソーシャルスタイル診断</h1>
-    <ul class="questions">
-      <li class="textBox">
-        <span class="text">Q1. 冷静で人からの指示は嫌い</span><!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+    <div class="modal-content-js">
+      <div type="button" class="close js-modal-close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
       </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-    %button 診断する
-      <a href="#" class="js-modal-open" data-target="modal-question-2">質問2に進む</a>
-      <a href="#" class="js-modal-close">閉じる</a>
-    </div>
-</div>
-
-<div id="modal-question-2" class="modal js-modal">
-  <div class="modal-bg js-modal-close">
-  </div>
-    <div class="modal-content">
-      <p>ここにコンテンツ2が入ります。ここにコンテンツ2が入ります。ここにコンテンツ2が入ります。</p>
-      <a href="#" class="js-modal-open" data-target="modal-question-1">質問1に戻る</a>
-      <a href="#" class="js-modal-close">閉じる</a>
+      <h2>ドローン空撮に向けたToDoリスト</h2>
+      <p>※前提として、業務での飛行ではなく個人での趣味飛行を目的とし<br>
+             航空法などの知識、理解を持っている方向けです</p>
+      <ol class="questions">
+        <li class="question-box">
+          <div class="row">
+            <span class="question col-9">ドローン操縦の国家資格または民間資格を有している。
+            　<p>資格がないと申請や許可を取ることが難しくなります。</p>
+            </span>
+            <div class="col-3">
+              <input type="radio" name="select1"><label>はい</label>
+              <input type="radio" name="select1"><label>いいえ</label>
+            </div>
+          </div>
+        </li>
+        <li class="question-box">
+          <div class="row">
+            <span class="question col-9">DIPS　ドローン情報基盤システムの登録をしている。
+              <p>飛行申請し許可をもらうために必要です。</p>
+            </span>
+            <div class="col-3">
+              <input type="radio" name="select2"><label>はい</label>
+              <input type="radio" name="select2"><label>いいえ</label>
+            </div>
+          </div>
+        </li>
+        <li class="question-box">
+          <div class="row">
+            <span class="question col-9">FISS ドローン操縦基盤システムの登録をしている。
+              <p>登録し申請しなければ飛行許可を取り消される可能性があります。</p>
+            </span>
+            <div class="col-3">
+              <input type="radio" name="select3"><label>はい</label>
+              <input type="radio" name="select3"><label>いいえ</label>
+            </div>
+          </div>
+        </li>
+        <li class="question-box">
+          <div class="row">
+            <span class="question col-9">機体認証登録を完了している。
+              <p>義務化されています。</p>
+            </span>
+            <div class="col-3">
+              <input type="radio" name="select4"><label>はい</label>
+              <input type="radio" name="select4"><label>いいえ</label>
+            </div>
+          </div>
+        </li>
+        <li class="question-box">
+          <div class="row">
+            <span class="question col-9">風速計を準備している。
+            　<p>風速5m以上でのフライトはできません。</p>
+            </span>
+            <div class="col-3">
+              <input type="radio" name="select5"><label>はい</label>
+              <input type="radio" name="select5"><label>いいえ</label>
+            </div>
+          </div>
+        </li>
+        <li class="question-box">
+          <div class="row">
+            <span class="question col-9">スマホアプリ『ドローンフライトナビ』をダウンロードしている。
+              <p>航空法で制限されている空域の把握に有効です。</p>
+            </span>
+            <div class="col-3">
+              <input type="radio" name="select6"><label>はい</label>
+              <input type="radio" name="select6"><label>いいえ</label>
+            </div>
+          </div>
+        </li>
+        <li class="question-box">
+          <div class="row">
+            <span class="question col-9">フライト予定地が空港などの周辺地域の上空ではない。
+              <p>『いいえ』の場合は一括申請が必要です。</p>
+            </span>
+            <div class="col-3">
+              <input type="radio" name="select7"><label>はい</label>
+              <input type="radio" name="select7"><label>いいえ</label>
+            </div>
+          </div>
+        </li>
+        <li class="question-box">
+          <div class="row">
+            <span class="question col-9">フライト予定地が緊急用務空域ではない。
+            　<p>『いいえ』の場合は一括申請が必要です。</p>
+            </span>
+            <div class="col-3">
+              <input type="radio" name="select8"><label>はい</label>
+              <input type="radio" name="select8"><label>いいえ</label>
+            </div>
+          </div>
+        </li>
+        <li class="question-box">
+          <div class="row">
+            <span class="question col-9">150ｍ以上の高さでの飛行をしない。
+              <p>『いいえ』の場合は一括申請が必要です。</p>
+            </span>
+            <div class="col-3">
+              <input type="radio" name="select9"><label>はい</label>
+              <input type="radio" name="select9"><label>いいえ</label>
+            </div>
+          </div>
+        </li>
+        <li class="question-box">
+          <div class="row">
+            <span class="question col-9">フライト予定地が人口集中地区の上空ではない。
+              <p>『いいえ』の場合は一括申請が必要です。</p>
+            </span>
+            <div class="col-3">
+              <input type="radio" name="select10"><label>はい</label>
+              <input type="radio" name="select10"><label>いいえ</label>
+            </div>
+          </div>
+        </li>
+        <li class="question-box">
+          <div class="row">
+            <span class="question col-9">夜間飛行はしない。
+              <p>『いいえ』の場合は国土交通省（航空局）への承認が必要です。<br>
+                 訓練とその証明も必要です。</p>
+            </span>
+            <div class="col-3">
+              <input type="radio" name="select11"><label>はい</label>
+              <input type="radio" name="select11"><label>いいえ</label>
+            </div>
+          </div>
+        </li>
+        <li class="question-box">
+          <div class="row">
+            <span class="question col-9">目視外飛行はしない。
+              <p>『いいえ』の場合は国土交通省（航空局）への承認が必要です。<br>
+                 訓練とその証明も必要です。</p>
+            </span>
+            <div class="col-3">
+              <input type="radio" name="select12"><label>はい</label>
+              <input type="radio" name="select12"><label>いいえ</label>
+            </div>
+          </div>
+        </li>
+        <li class="question-box">
+          <div class="row">
+            <span class="question col-9">人・物・車等から30m未満での飛行はしない。
+              <p>『いいえ』の場合は国土交通省（航空局）への承認が必要です。</p>
+            </span>
+            <div class="col-3">
+              <input type="radio" name="select13"><label>はい</label>
+              <input type="radio" name="select13"><label>いいえ</label>
+            </div>
+          </div>
+        </li>
+        <li class="question-box">
+          <div class="row">
+            <span class="question col-9">イベント上空飛行はしない。
+              <p>『いいえ』の場合は国土交通省（航空局）への承認が必要です。</p>
+            </span>
+            <div class="col-3">
+              <input type="radio" name="select14"><label>はい</label>
+              <input type="radio" name="select14"><label>いいえ</label>
+            </div>
+          </div>
+        </li>
+        <li class="question-box">
+          <div class="row">
+            <span class="question col-9">危険物輸送はしない
+              <p>『いいえ』の場合は国土交通省（航空局）への承認が必要です。</p>
+            </span>
+            <div class="col-3">
+              <input type="radio" name="select15"><label>はい</label>
+              <input type="radio" name="select15"><label>いいえ</label>
+            </div>
+          </div>
+        </li>
+        <li class="question-box">
+          <div class="row">
+            <span class="question col-9">物件投下はしない。
+              <p>『いいえ』の場合は国土交通省（航空局）への承認が必要です。</p>
+            </span>
+            <div class="col-3">
+              <input type="radio" name="select16"><label>はい</label>
+              <input type="radio" name="select16"><label>いいえ</label>
+            </div>
+          </div>
+        </li>
+        <li class="question-box">
+          <div class="row">
+            <span class="question col-9">土地所有者・管理者の許可をもらえている。
+              <p>申請の有無に関わらず、民法に触れる為、必要な事項です。</p>
+            </span>
+            <div class="col-3">
+              <input type="radio" name="select17"><label>はい</label>
+              <input type="radio" name="select17"><label>いいえ</label>
+            </div>
+          </div>
+        </li>
+        <li class="question-box">
+          <div class="row">
+            <span class="question col-9">所轄警察への飛行通達を行っている。
+              <p>近隣住民などのトラブルを避けるためにも行うべき項目です。</p>
+            </span>
+            <div class="col-3">
+              <input type="radio" name="select18"><label>はい</label>
+              <input type="radio" name="select18"><label>いいえ</label>
+            </div>
+          </div>
+        </li>
+        <li class="question-box">
+          <div class="row">
+            <span class="question col-9">プライバシー権・肖像権には十分に配慮する。
+              <p>法的保護の対象の為、必要です</p>
+            </span>
+            <div class="col-3">
+              <input type="radio" name="select19"><label>はい</label>
+              <input type="radio" name="select19"><label>いいえ</label>
+            </div>
+          </div>
+        </li>
+        <li class="question-box">
+          <div class="row">
+            <span class="question col-9">飛行計画を作成する。
+              <p>申請や許可をもらう際に必要になる場合があります。</p>
+            </span>
+            <div class="col-3">
+              <input type="radio" name="select20"><label>はい</label>
+              <input type="radio" name="select20"><label>いいえ</label>
+            </div>
+          </div>
+        </li>
+        <li class="question-box">
+          <div class="row">
+            <span class="question col-9">天候を確認したか。
+              <p>雨、雪はドローン故障の原因となります。風は要注意です。</p>
+            </span>
+            <div class="col-3">
+              <input type="radio" name="select21"><label>はい</label>
+              <input type="radio" name="select21"><label>いいえ</label>
+            </div>
+          </div>
+        </li>
+        <li class="question-box">
+          <div class="row">
+            <span class="question col-9">バッテリーの充電は十分か。
+              <p>墜落の恐れや、撮影が十分に行えなくなります。</p>
+            </span>
+            <div class="col-3">
+              <input type="radio" name="select22"><label>はい</label>
+              <input type="radio" name="select22"><label>いいえ</label>
+            </div>
+          </div>
+        </li>
+        <li class="question-box">
+          <div class="row">
+            <span class="question col-9">プロポの充電を忘れていないか。
+              <p>忘れがちです。これがないと操縦できません。</p>
+            </span>
+            <div class="col-3">
+              <input type="radio" name="select23"><label>はい</label>
+              <input type="radio" name="select23"><label>いいえ</label>
+            </div>
+          </div>
+        </li>
+        <li class="question-box">
+          <div class="row">
+            <span class="question col-9">トラブル時の連絡先を把握しているか。
+              <p>適切な報告を行わないと法律違反など重大な過失に<br>
+                 つながる可能性があります。</p>
+            </span>
+            <div class="col-3">
+              <input type="radio" name="select24"><label>はい</label>
+              <input type="radio" name="select24"><label>いいえ</label>
+            </div>
+          </div>
+        </li>
+      </ol>
+      <a href="#" class="btn btn-secondary js-modal-close">閉じる</a>
+      <a href="#" class="js-modal-top btn btn-danger col-3 offset-1" data-target="modal-top"></a>
     </div>
 </div>
 
 <script>
 // モーダルウィンドウを開く
 $('.js-modal-open').on('click', function(){
+  var target = $(this).data('target');
+  var modal = document.getElementById(target);
+  scrollPosition = $(window).scrollTop();
+
+  $('body').addClass('fixed').css({'top': -scrollPosition});
+  $(modal).fadeIn();
+  return false;
+});
+
+$('.js-modal-top').on('click', function(){
+  var target = $(this).data('target');
+  var modal = document.getElementById(target);
+  scrollPosition = $(window).scrollTop();
+
+  $('body').addClass('fixed').css({'top': -scrollPosition});
+  $(modal).fadeIn();
+  return false;
+});
+
+// モーダルウィンドウを開く
+$('.js-modal-next').on('click', function(){
   var target = $(this).data('target');
   var modal = document.getElementById(target);
   scrollPosition = $(window).scrollTop();
