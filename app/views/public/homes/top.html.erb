@@ -3,8 +3,10 @@
     <span class="text-light">no drone no life </span>
     <span class="text-light">Dro-Ful</span>
   </span>
-  <span href="#" class="js-modal-top btn btn-danger col-3 offset-1" data-target="modal-top">
-    あなたの空撮をサポートします!<br>
+  <div class="blinking">
+    <div>あなたの空撮をサポートします!</div>
+　</div>
+  <span href="#" class="js-modal-top btn btn-danger col-3 " data-target="modal-top">
     こちらをクリック！！
   </span>
 </div>
@@ -12,37 +14,46 @@
 <div id="modal-top" class="modal js-modal">
   <div class="modal-bg js-modal-close">
   </div>
-    <div class="modal-content-js">
+    <div class="modal-top-content-js">
       <div type="button" class="close js-modal-close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </div>
-      <h2>ドローン初心者サポート！ToDoリスト</h2>
-      <p>
+      <h2 class="mt-2 mb-4 text-center"><b>ドローン初心者サポート！<br>
+          空撮ToDoリスト</b></h2>
+      <p class="text-center" style="font-size:18px">
         こちらではドローン空撮を行うにあたって<br>
         『結局、自分はなにをすべきなのかわからない！』<br>
         そんなあなたに空撮に必要なやるべき事をリストアップしております！<br>
         この機能を活用いただき、詳しい事はこのコミュニティーのメンバーとの<br>
         コメントでの交流やご自身で調べながら、空撮ライフを満喫してください！
       </p>
-      <p>
-        ※あくまでサポート的な機能ですので、参考程度に留めて頂くようお願いいたします。
-        トラブル等には一切の責任を負いかねますので
+      <p class="text-center" style="font-size:13px">
+        ※あくまでサポート的な機能ですので、参考程度に留めて頂くようお願いいたします。<br>
+        おおまかな項目となり詳細までの説明は割愛させて頂いております。<br>
+        各項目の詳細な情報に関しては、しっかりとご自身で調べていただくようお願いいたします。<br>
+        これらの情報をお客様がご利用することで発生したトラブルや損失に対して、当社は一切責任を負いません。
       </p>
-      <a href="#" class="btn btn-success js-modal-open" data-target="modal-questions">Let's Get Ready!!</a>
-      <a href="#" class="btn btn-secondary js-modal-close">閉じる</a>
+      <div class="row text-center mt-5">
+        <div class="col">
+          <a href="#" class="btn btn-secondary js-modal-close">閉じる</a>
+        </div>
+        <div class="col">
+          <a href="#" class="btn btn-danger js-modal-open" data-target="modal-questions">Let's Get Ready!!</a>
+        </div>
+      </div>
     </div>
 </div>
 
 <div id="modal-questions" class="modal js-modal">
   <div class="modal-bg js-modal-close">
   </div>
-    <div class="modal-content-js">
+    <div class="modal-questions-content-js">
       <div type="button" class="close js-modal-close" data-dismiss="modal" aria-label="Close">
       <span aria-hidden="true">&times;</span>
       </div>
-      <h2>ドローン空撮に向けたToDoリスト</h2>
-      <p>※前提として、業務での飛行ではなく個人での趣味飛行を目的とし<br>
-             航空法などの知識、理解を持っている方向けです</p>
+      <h2 class="mt-2 mb-4 text-center"><b>さぁ！ドローン空撮の準備をしよう！！</b></h2>
+      <p class="text-center" style="font-size:13px">※前提として、業務での飛行ではなく個人での趣味飛行を目的とし<br>
+             航空法などの知識、理解を持っている方向けです。</p>
       <ol class="questions">
         <li class="question-box">
           <div class="row">
@@ -50,8 +61,8 @@
             　<p>資格がないと申請や許可を取ることが難しくなります。</p>
             </span>
             <div class="col-3">
-              <input type="radio" name="select1"><label>はい</label>
-              <input type="radio" name="select1"><label>いいえ</label>
+              <input type="radio" name="select-1"><label>はい</label>
+              <input type="radio" name="select-1"><label>いいえ</label>
             </div>
           </div>
         </li>
@@ -61,8 +72,8 @@
               <p>飛行申請し許可をもらうために必要です。</p>
             </span>
             <div class="col-3">
-              <input type="radio" name="select2"><label>はい</label>
-              <input type="radio" name="select2"><label>いいえ</label>
+              <input type="radio" name="select-2"><label>はい</label>
+              <input type="radio" name="select-2"><label>いいえ</label>
             </div>
           </div>
         </li>
@@ -72,8 +83,8 @@
               <p>登録し申請しなければ飛行許可を取り消される可能性があります。</p>
             </span>
             <div class="col-3">
-              <input type="radio" name="select3"><label>はい</label>
-              <input type="radio" name="select3"><label>いいえ</label>
+              <input type="radio" name="select-3"><label>はい</label>
+              <input type="radio" name="select-3"><label>いいえ</label>
             </div>
           </div>
         </li>
@@ -83,8 +94,8 @@
               <p>義務化されています。</p>
             </span>
             <div class="col-3">
-              <input type="radio" name="select4"><label>はい</label>
-              <input type="radio" name="select4"><label>いいえ</label>
+              <input type="radio" name="select-4"><label>はい</label>
+              <input type="radio" name="select-4"><label>いいえ</label>
             </div>
           </div>
         </li>
@@ -94,8 +105,8 @@
             　<p>風速5m以上でのフライトはできません。</p>
             </span>
             <div class="col-3">
-              <input type="radio" name="select5"><label>はい</label>
-              <input type="radio" name="select5"><label>いいえ</label>
+              <input type="radio" name="select-5"><label>はい</label>
+              <input type="radio" name="select-5"><label>いいえ</label>
             </div>
           </div>
         </li>
@@ -105,8 +116,8 @@
               <p>航空法で制限されている空域の把握に有効です。</p>
             </span>
             <div class="col-3">
-              <input type="radio" name="select6"><label>はい</label>
-              <input type="radio" name="select6"><label>いいえ</label>
+              <input type="radio" name="select-6"><label>はい</label>
+              <input type="radio" name="select-6"><label>いいえ</label>
             </div>
           </div>
         </li>
@@ -116,8 +127,8 @@
               <p>『いいえ』の場合は一括申請が必要です。</p>
             </span>
             <div class="col-3">
-              <input type="radio" name="select7"><label>はい</label>
-              <input type="radio" name="select7"><label>いいえ</label>
+              <input type="radio" name="select-7"><label>はい</label>
+              <input type="radio" name="select-7"><label>いいえ</label>
             </div>
           </div>
         </li>
@@ -127,8 +138,8 @@
             　<p>『いいえ』の場合は一括申請が必要です。</p>
             </span>
             <div class="col-3">
-              <input type="radio" name="select8"><label>はい</label>
-              <input type="radio" name="select8"><label>いいえ</label>
+              <input type="radio" name="select-8"><label>はい</label>
+              <input type="radio" name="select-8"><label>いいえ</label>
             </div>
           </div>
         </li>
@@ -138,8 +149,8 @@
               <p>『いいえ』の場合は一括申請が必要です。</p>
             </span>
             <div class="col-3">
-              <input type="radio" name="select9"><label>はい</label>
-              <input type="radio" name="select9"><label>いいえ</label>
+              <input type="radio" name="select-9"><label>はい</label>
+              <input type="radio" name="select-9"><label>いいえ</label>
             </div>
           </div>
         </li>
@@ -149,8 +160,8 @@
               <p>『いいえ』の場合は一括申請が必要です。</p>
             </span>
             <div class="col-3">
-              <input type="radio" name="select10"><label>はい</label>
-              <input type="radio" name="select10"><label>いいえ</label>
+              <input type="radio" name="select-10"><label>はい</label>
+              <input type="radio" name="select-10"><label>いいえ</label>
             </div>
           </div>
         </li>
@@ -161,8 +172,8 @@
                  訓練とその証明も必要です。</p>
             </span>
             <div class="col-3">
-              <input type="radio" name="select11"><label>はい</label>
-              <input type="radio" name="select11"><label>いいえ</label>
+              <input type="radio" name="select-11"><label>はい</label>
+              <input type="radio" name="select-11"><label>いいえ</label>
             </div>
           </div>
         </li>
@@ -173,8 +184,8 @@
                  訓練とその証明も必要です。</p>
             </span>
             <div class="col-3">
-              <input type="radio" name="select12"><label>はい</label>
-              <input type="radio" name="select12"><label>いいえ</label>
+              <input type="radio" name="select-12"><label>はい</label>
+              <input type="radio" name="select-12"><label>いいえ</label>
             </div>
           </div>
         </li>
@@ -184,8 +195,8 @@
               <p>『いいえ』の場合は国土交通省（航空局）への承認が必要です。</p>
             </span>
             <div class="col-3">
-              <input type="radio" name="select13"><label>はい</label>
-              <input type="radio" name="select13"><label>いいえ</label>
+              <input type="radio" name="select-13"><label>はい</label>
+              <input type="radio" name="select-13"><label>いいえ</label>
             </div>
           </div>
         </li>
@@ -195,8 +206,8 @@
               <p>『いいえ』の場合は国土交通省（航空局）への承認が必要です。</p>
             </span>
             <div class="col-3">
-              <input type="radio" name="select14"><label>はい</label>
-              <input type="radio" name="select14"><label>いいえ</label>
+              <input type="radio" name="select-14"><label>はい</label>
+              <input type="radio" name="select-14"><label>いいえ</label>
             </div>
           </div>
         </li>
@@ -206,8 +217,8 @@
               <p>『いいえ』の場合は国土交通省（航空局）への承認が必要です。</p>
             </span>
             <div class="col-3">
-              <input type="radio" name="select15"><label>はい</label>
-              <input type="radio" name="select15"><label>いいえ</label>
+              <input type="radio" name="select-15"><label>はい</label>
+              <input type="radio" name="select-15"><label>いいえ</label>
             </div>
           </div>
         </li>
@@ -217,8 +228,8 @@
               <p>『いいえ』の場合は国土交通省（航空局）への承認が必要です。</p>
             </span>
             <div class="col-3">
-              <input type="radio" name="select16"><label>はい</label>
-              <input type="radio" name="select16"><label>いいえ</label>
+              <input type="radio" name="select-16"><label>はい</label>
+              <input type="radio" name="select-16"><label>いいえ</label>
             </div>
           </div>
         </li>
@@ -228,8 +239,8 @@
               <p>申請の有無に関わらず、民法に触れる為、必要な事項です。</p>
             </span>
             <div class="col-3">
-              <input type="radio" name="select17"><label>はい</label>
-              <input type="radio" name="select17"><label>いいえ</label>
+              <input type="radio" name="select-17"><label>はい</label>
+              <input type="radio" name="select-17"><label>いいえ</label>
             </div>
           </div>
         </li>
@@ -239,8 +250,8 @@
               <p>近隣住民などのトラブルを避けるためにも行うべき項目です。</p>
             </span>
             <div class="col-3">
-              <input type="radio" name="select18"><label>はい</label>
-              <input type="radio" name="select18"><label>いいえ</label>
+              <input type="radio" name="select-18"><label>はい</label>
+              <input type="radio" name="select-18"><label>いいえ</label>
             </div>
           </div>
         </li>
@@ -250,8 +261,8 @@
               <p>法的保護の対象の為、必要です</p>
             </span>
             <div class="col-3">
-              <input type="radio" name="select19"><label>はい</label>
-              <input type="radio" name="select19"><label>いいえ</label>
+              <input type="radio" name="select-19"><label>はい</label>
+              <input type="radio" name="select-19"><label>いいえ</label>
             </div>
           </div>
         </li>
@@ -261,8 +272,8 @@
               <p>申請や許可をもらう際に必要になる場合があります。</p>
             </span>
             <div class="col-3">
-              <input type="radio" name="select20"><label>はい</label>
-              <input type="radio" name="select20"><label>いいえ</label>
+              <input type="radio" name="select-20"><label>はい</label>
+              <input type="radio" name="select-20"><label>いいえ</label>
             </div>
           </div>
         </li>
@@ -272,8 +283,8 @@
               <p>雨、雪はドローン故障の原因となります。風は要注意です。</p>
             </span>
             <div class="col-3">
-              <input type="radio" name="select21"><label>はい</label>
-              <input type="radio" name="select21"><label>いいえ</label>
+              <input type="radio" name="select-21"><label>はい</label>
+              <input type="radio" name="select-21"><label>いいえ</label>
             </div>
           </div>
         </li>
@@ -283,8 +294,8 @@
               <p>墜落の恐れや、撮影が十分に行えなくなります。</p>
             </span>
             <div class="col-3">
-              <input type="radio" name="select22"><label>はい</label>
-              <input type="radio" name="select22"><label>いいえ</label>
+              <input type="radio" name="select-22"><label>はい</label>
+              <input type="radio" name="select-22"><label>いいえ</label>
             </div>
           </div>
         </li>
@@ -294,8 +305,8 @@
               <p>忘れがちです。これがないと操縦できません。</p>
             </span>
             <div class="col-3">
-              <input type="radio" name="select23"><label>はい</label>
-              <input type="radio" name="select23"><label>いいえ</label>
+              <input type="radio" name="select-23"><label>はい</label>
+              <input type="radio" name="select-23"><label>いいえ</label>
             </div>
           </div>
         </li>
@@ -306,29 +317,18 @@
                  つながる可能性があります。</p>
             </span>
             <div class="col-3">
-              <input type="radio" name="select24"><label>はい</label>
-              <input type="radio" name="select24"><label>いいえ</label>
+              <input type="radio" name="select-24"><label>はい</label>
+              <input type="radio" name="select-24"><label>いいえ</label>
             </div>
           </div>
         </li>
       </ol>
       <a href="#" class="btn btn-secondary js-modal-close">閉じる</a>
-      <a href="#" class="js-modal-top btn btn-danger col-3 offset-1" data-target="modal-top"></a>
     </div>
 </div>
 
 <script>
-// モーダルウィンドウを開く
-$('.js-modal-open').on('click', function(){
-  var target = $(this).data('target');
-  var modal = document.getElementById(target);
-  scrollPosition = $(window).scrollTop();
-
-  $('body').addClass('fixed').css({'top': -scrollPosition});
-  $(modal).fadeIn();
-  return false;
-});
-
+// Topからモーダルウィンドウを開く
 $('.js-modal-top').on('click', function(){
   var target = $(this).data('target');
   var modal = document.getElementById(target);
@@ -339,16 +339,27 @@ $('.js-modal-top').on('click', function(){
   return false;
 });
 
-// モーダルウィンドウを開く
-$('.js-modal-next').on('click', function(){
+$('.js-modal-open').on('click', function(){
   var target = $(this).data('target');
   var modal = document.getElementById(target);
   scrollPosition = $(window).scrollTop();
 
   $('body').addClass('fixed').css({'top': -scrollPosition});
   $(modal).fadeIn();
+  changeModal('modal-top', 'modal-questions');
   return false;
 });
+
+
+/* Modal-Qestiinsへのボタン押下時のイベント */
+$('#modal-questions').on('click', function() {
+    changeModal('modal-top', 'modal-questions');
+});
+/* モーダルの切り替え */
+function changeModal(beforeModal, afterModal) {
+    document.getElementById(beforeModal).style.display = 'none';
+    document.getElementById(afterModal).style.display = 'block';
+}
 
 // モーダルウィンドウを閉じる
 $('.js-modal-close').on('click', function(){

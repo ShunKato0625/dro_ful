@@ -176,16 +176,31 @@ h1{
 }
 
 /* モーダル本体 */
-.modal-content-js{
+.modal-top-content-js{
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   overflow: scroll; /* はみ出た部分はスクロールさせる */
-  height: 50%;/* これが無いと「overflow:scroll」が利かない */
+  height: 60%;/* これが無いと「overflow:scroll」が利かない */
+  width: 50% !important;/* これが無いと「overflow:scroll」が利かない */
+  background: #eeeeee;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+/* モーダル本体 */
+.modal-questions-content-js{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: scroll; /* はみ出た部分はスクロールさせる */
+  height: 90%;/* これが無いと「overflow:scroll」が利かない */
   width: 60% !important;/* これが無いと「overflow:scroll」が利かない */
-  background: white;
-  padding: 40px;
+  background: #eeeeee;
+  padding: 50px 100px;
+  border-radius: 10px;
 }
 
 /* モーダルウィンドウ表示中に記事本体を固定 */
@@ -198,4 +213,23 @@ body.fixed {
 
 .js-modal-top{
   z-index: 1;
+}
+
+/* 点滅 */
+.blinking{
+    -webkit-animation:blink 1.5s ease-in-out infinite alternate;
+    -moz-animation:blink 1.5s ease-in-out infinite alternate;
+    animation:blink 1.5s ease-in-out infinite alternate;
+}
+@-webkit-keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+@-moz-keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+@keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
 }
