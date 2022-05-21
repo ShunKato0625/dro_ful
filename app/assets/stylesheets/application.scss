@@ -211,15 +211,16 @@ body.fixed {
   left: 0;
 }
 
-.js-modal-top{
-  z-index: 1;
-}
+
 
 /* 点滅 */
 .blinking{
     -webkit-animation:blink 1.5s ease-in-out infinite alternate;
     -moz-animation:blink 1.5s ease-in-out infinite alternate;
     animation:blink 1.5s ease-in-out infinite alternate;
+    position: absolute;
+    top: 76%;
+    left: 80%;
 }
 @-webkit-keyframes blink{
     0% {opacity:0;}

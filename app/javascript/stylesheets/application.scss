@@ -66,3 +66,21 @@
 body {
   margin: 0;
 }
+
+.js-modal-top{
+  background-color: #ff3366 !important;
+  color: #fff;
+  font-weight: bold;
+  opacity: 0.8;
+  border-radius: 20px;
+  z-index: 1;
+  position: absolute;
+  top: 85%;
+  left: 80%;
+}
+
+.js-modal-top:hover{
+  background-color: #ff3333 !important;
+  color: #fff;
+  font-weight: bold;
+}
