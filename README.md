@@ -38,7 +38,12 @@
 
 
 ## 設計書
-
+- 画面遷移図：https://drive.google.com/file/d/1woxxj7SzvtSbFam80NVAdGTopcGOQG2L/view?usp=sharing
+- ワイヤーフレーム（会員・ゲスト）：https://drive.google.com/file/d/1eaN0X7kh5_XhtR36bevRutiN8X85qYVO/view?usp=sharing
+- ワイヤーフレーム（管理者）：https://drive.google.com/file/d/1Bg4chCtxaBajPAtufqT6P9UfYbb_WoMQ/view?usp=sharing
+- ER図：https://drive.google.com/file/d/12Fm2z7Pq3TpsvOzAMHO9Ww1mECUBLYAF/view?usp=sharing
+- テーブル定義書：https://docs.google.com/spreadsheets/d/1bRm2ryM8rAXFlwbK-aXPqD0bvx9Csin3/edit?usp=sharing&ouid=100860413197556118043&rtpof=true&sd=true
+- 詳細設計：https://docs.google.com/spreadsheets/d/10KZGiTOTWl58By6MJdxO2qXDKtk3T72b/edit?usp=sharing&ouid=100860413197556118043&rtpof=true&sd=true
 
 ## 開発環境
 - OS：Linux(CentOS)
@@ -48,4 +53,3 @@
 - IDE：Cloud9
 
 ## 使用素材
-- Google Maps API使用予定

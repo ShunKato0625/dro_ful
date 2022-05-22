@@ -68,5 +68,4 @@ gem 'kaminari'
 gem "enum_help"
 gem 'devise-i18n'
 gem 'impressionist'
-gem 'acts-as-taggable-on'
 gem 'active_hash'
