@@ -21,9 +21,14 @@
             <i class="fas fa-eye"></i><%= post.impressions_count %>
           </div>
           <div class="col d-flex justify-content-start">
-            <div id ="favorite_btn_<%= post.id %>">
-              <%= render 'public/favorites/favorite', post: post %>
-            </div>
+            <% if post.customer_id != current_customer.id  %>
+              <div id ="favorite_btn_<%= post.id %>">
+                <%= render 'public/favorites/favorite', post: post %>
+              </div>
+            <% else %>
+              <i class="fas fa-thumbs-up" aria-hidden="true" style="color: black;"></i>
+              <%= post.favorites.count %>
+            <% end %>
           </div>
         <% end %>
       </div>

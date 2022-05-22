@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_14_014820) do
+ActiveRecord::Schema.define(version: 2022_05_22_161812) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -129,7 +129,6 @@ ActiveRecord::Schema.define(version: 2022_05_14_014820) do
     t.text "remarks"
     t.float "rate"
     t.integer "impressions_count", default: 0
-    t.boolean "is_active", default: true
     t.date "shooting_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

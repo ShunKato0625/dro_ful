@@ -17,11 +17,14 @@
           <div class="row justify-content-around">
             <%if customer_signed_in? %>
               <i class="fas fa-eye"></i><%= post.impressions_count %>
-              <% if post.customer_id != current_customer.id  %>
-                <div id ="favorite_btn_<%= post.id %>">
-                  <%= render 'public/favorites/favorite', post: post %>
-                </div>
-              <% end %>
+                <% if post.customer_id != current_customer.id  %>
+                  <div id ="favorite_btn_<%= post.id %>">
+                    <%= render 'public/favorites/favorite', post: post %>
+                  </div>
+                <% else %>
+                  <i class="fas fa-thumbs-up" aria-hidden="true" style="color: black;"></i>
+                  <%= post.favorites.count %>
+                <% end %>
               <i class="fas fa-comment-alt"></i><%= post.post_comments.count %>
             <% end %>
           </div>
