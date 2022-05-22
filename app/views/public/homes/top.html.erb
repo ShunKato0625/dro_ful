@@ -3,15 +3,17 @@
     <span class="text-light">no drone no life </span>
     <span class="text-light">Dro-Ful</span>
   </span>
-  <div class="blinking">
-    <div><b>あなたの空撮をサポートします！<br>
-            初心者の為の空撮やることリスト<br>
-            Let's Check Out !!!</b>
+  <% if customer_signed_in? %>
+    <div class="blinking">
+      <div><b>あなたの空撮をサポートします！<br>
+              初心者の為の空撮やることリスト<br>
+              Let's Check Out !!!</b>
+      </div>
+  　</div>
+    <div href="#" class="js-modal-top btn" data-target="modal-top">
+      こちらをクリック！！
     </div>
-　</div>
-  <div href="#" class="js-modal-top btn" data-target="modal-top">
-    こちらをクリック！！
-  </div>
+  <% end %>
 </div>
 
 <div id="modal-top" class="modal js-modal">
