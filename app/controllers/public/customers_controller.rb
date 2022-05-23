@@ -56,4 +56,5 @@ class Public::CustomersController < ApplicationController
                                        :nick_name, :email, :introduction, :profile_image)
     end
 
+
 end
