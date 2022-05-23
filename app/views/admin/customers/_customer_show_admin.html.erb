@@ -29,6 +29,10 @@
           <td><%= @customer.email %></td>
         </tr>
         <tr>
+          <th class="col-4 table-active">自己紹介</th>
+          <td><%= customer.introduction %></td>
+        </tr>
+        <tr>
           <th class="col-4 table-active">会員ステータス</th>
           <td>
             <% if @customer.active_for_authentication? %>

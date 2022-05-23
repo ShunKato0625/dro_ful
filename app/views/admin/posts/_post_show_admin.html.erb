@@ -8,11 +8,11 @@
       <div class="row justify-content-center" style="line-height:40px">
           撮影日：<%= post.shooting_date %>
       </div>
-        <%= link_to customers_path(post.customer.id) do %>
-      <div class="row justify-content-center px-3" style="line-height:40px">
-          投稿者：<%= image_tag post.customer.get_profile_image(40,40) ,class: "profile_image mx-3" %>
-                  <%= post.customer.nick_name %>
-      </div>
+        <%= link_to admin_customer_path(post.customer.id) do %>
+          <div class="row justify-content-center px-3" style="line-height:40px">
+              投稿者：<%= image_tag post.customer.get_profile_image(40,40) ,class: "profile_image mx-3" %>
+                      <%= post.customer.nick_name %>
+          </div>
     　   <% end %>
       <div class="row" style="line-height:40px">
         <div class="col d-flex justify-content-end">
