@@ -44,6 +44,7 @@ group :development do
   gem 'spring'
   gem 'pry-rails'
   gem 'pry-byebug'
+  gem 'rubocop-airbnb'
 end
 
 group :test do
