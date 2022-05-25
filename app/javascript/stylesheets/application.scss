@@ -2,7 +2,7 @@
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
-
+// トップ画面アニメーションのCSS
 .bg {
   display: flex;
   flex-direction: column;
@@ -67,6 +67,7 @@ body {
   margin: 0;
 }
 
+// 会員トップ画面のモーダルウィンドウCSS
 .js-modal-top{
   background-color: #ff3366 !important;
   color: #fff;

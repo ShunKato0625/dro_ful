@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row my-2">
-    <h3 class="col-6">登録情報</h3>
+    <h3 class="col-6"><b>登録情報</b></h3>
     <div class"col-6">
       <%= link_to '編集する', edit_admin_customer_path(@customer), class: "btn btn-success" %>
     </div>
@@ -50,7 +50,7 @@
   </div>
   <div class="row mt-5">
     <div class="col-12">
-      <h3>投稿一覧</h3>
+      <h3><b>投稿履歴</b></h3>
     </div>
   </div>
   <%= render 'admin/posts/post_index_admin', posts: posts, customer: customer %>

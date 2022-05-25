@@ -33,6 +33,7 @@ class Post < ApplicationRecord
   end
 
   # 投稿はタイトル名、都道府県名、申請の名前で検索可能。
+  # prefecture_idを都道府県名に表示変更。
   # タイトル名、申請項目名は部分一致、都道府県名は完全一致。
   def self.search_post(search)
     prefecture = Prefecture.find_by(name: search)

@@ -3,7 +3,11 @@
     <tbody>
       <tr>
         <th class="col-4 table-active">ニックネーム</th>
-        <td><%= customer.nick_name %></td>
+        <% if customer.is_deleted == true %>
+          <td><%= customer.nick_name %>  (退会したユーザー）</td>
+        <% else %>
+          <td><%= customer.nick_name %></td>
+        <% end %>
       </tr>
       <tr>
         <th class="col-4 table-active">自己紹介</th>

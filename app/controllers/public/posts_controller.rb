@@ -48,6 +48,7 @@ class Public::PostsController < ApplicationController
     post = Post.find(params[:id])
     post.destroy
     redirect_to posts_path
+    flash[:notice] = "投稿を削除しました"
   end
 
   def favorited_by?(customer)

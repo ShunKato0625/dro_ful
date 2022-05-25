@@ -1,6 +1,6 @@
 class Public::CustomersController < ApplicationController
   before_action :authenticate_customer!
-  # before_action :ensure_correct_customer, only: [:edit, :update]
+  before_action :ensure_correct_customer, only: [:edit, :update]
 
   def index
     @customers = Customer.all.where(is_deleted: false).page(params[:page]).per(10)
@@ -12,7 +12,6 @@ class Public::CustomersController < ApplicationController
     if @customer.id == current_customer.id
       redirect_to customer_my_page_path(@customer.id)  #自分を選択した時はマイページに遷移させる
     end
-
   end
 
   def edit
@@ -51,10 +50,18 @@ class Public::CustomersController < ApplicationController
 
   private
 
-    def customer_params
-      params.require(:customer).permit(:last_name, :first_name, :last_name_kana, :first_name_kana,
-                                       :nick_name, :email, :introduction, :profile_image)
+  def ensure_correct_customer # []にはURLを打ったらユーザー詳細に返す
+    @customer = Customer.find(params[:id])
+    unless @customer == current_customer
+      redirect_to customer_path(current_customer)
     end
+  end
+
+
+  def customer_params
+    params.require(:customer).permit(:last_name, :first_name, :last_name_kana, :first_name_kana,
+                                     :nick_name, :email, :introduction, :profile_image)
+  end
 
 
 end

@@ -92,6 +92,8 @@ h1{
   background-color: #FFF;
   opacity: 0.9;
   border-radius: 2%;
+  width: 30%;
+  margin: 0 5px;
 }
 
 .post-show {
@@ -213,7 +215,7 @@ body.fixed {
 
 
 
-/* 点滅 */
+/* トップ点滅 */
 .blinking{
     -webkit-animation:blink 1.5s ease-in-out infinite alternate;
     -moz-animation:blink 1.5s ease-in-out infinite alternate;
@@ -235,6 +237,14 @@ body.fixed {
     100% {opacity:1;}
 }
 
+// バリデーション時のレイアウト崩れを防ぐ
 .field_with_errors {
   display: contents;
+}
+
+// コメントのもっと見る...
+.more{
+  color: #808080;
+  cursor: pointer;
+  font-weight: bold;
 }

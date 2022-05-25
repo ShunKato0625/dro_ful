@@ -34,11 +34,9 @@ class Customer < ApplicationRecord
     super && (is_deleted == false)
   end
 
-  #会員はニックネームで検索
+  #会員はニックネームで検索（部分一致）
   def self.search_customer(search)
       Customer.where('nick_name LIKE(?)',"%#{search}%")
   end
-
-
 
 end

@@ -42,18 +42,18 @@
   </div>
 
     <h3 class="my-4"><b>投稿履歴</b></h3>
-      <div id="post_index">
-        <%= render 'public/posts/post_index_public', posts: @posts, customer: @customer %>
-      </div>
-      <div class="more">
-        <b><%= link_to_next_page @posts, 'もっと見る', remote: true, params: { type: :post }, id: 'view_more_post', style:"color:black;" %></b>
-      </div>
+    <div id="post_index">
+      <%= render 'public/posts/post_index_public', posts: @posts, customer: @customer %>
+    </div>
+    <div class="more">
+      <b><%= link_to_next_page @posts, 'もっと見る', remote: true, params: { type: :post }, id: 'view_more_post', style:"color:black;" %></b>
+    </div>
 
     <h3 class="my-4"><b>ブックマーク一覧</b></h3>
-      <div id="bookmark">
-        <%= render 'shared/customers/bookmark', favorites: @favorites , post: @post %>
-      </div>
-      <div class="more">
-        <b><%= link_to_next_page @favorites, 'もっと見る', remote: true, params: { type: :favorite }, id: 'view_more' , style:"color:black;" %></b>
-      </div>
+    <div id="bookmark">
+      <%= render 'shared/customers/bookmark', favorites: @favorites , post: @post %>
+    </div>
+    <div class="more">
+      <b><%= link_to_next_page @favorites, 'もっと見る', remote: true, params: { type: :favorite }, id: 'view_more' , style:"color:black;" %></b>
+    </div>
 </div>
