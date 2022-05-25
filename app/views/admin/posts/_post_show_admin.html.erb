@@ -19,10 +19,10 @@
     　   <% end %>
       <div class="row" style="line-height:40px">
         <div class="col d-flex justify-content-end">
-          <i class="fas fa-eye"></i><%= post.impressions_count %>
+          <i class="far fa-eye"></i><%= post.impressions_count %>
         </div>
         <div class="col d-flex justify-content-start">
-          <i class="fas fa-thumbs-up" aria-hidden="true" style="color: black;"></i>
+          <i class="far fa-thumbs-up"></i>
           <%= post.favorites.count %>
         </div>
       </div>
@@ -30,30 +30,30 @@
 
     <div class="col-6 post-show">
       <div class="row">
-        撮影場所：<%= post.title %>
+        <b>撮影場所：</b><%= post.title %>
       </div>
       <div class="row">
-        都道府県：<%= post.prefecture.name %>
+        <b>都道府県：</b><%= post.prefecture.name %>
       </div>
       <div class="row">
-        アクセス：<%= post.access %>
+        <b>アクセス：</b><%= post.access %>
       </div>
       <div class="row">
-        機体名：<%= post.drone_type %>
+        <b>機体名：</b><%= post.drone_type %>
       </div>
       <div class="row">
-        申請：<% post.get_request_strings.each_with_index do |req, index| %>
+        <b>申請：</b><% post.get_request_strings.each_with_index do |req, index| %>
         <%= req %><% if index != post.get_request_strings.size - 1%>,&nbsp;<%end%>
         <%end%>
       </div>
       <div class="row">
-        許可：<%= post.authorization %>
+        <b>許可：</b><%= post.authorization %>
       </div>
       <div class="row">
-        オススメ度：<%= render "shared/posts/static_rate", post: post %>
+        <b>オススメ度：</b><%= render "shared/posts/static_rate", post: post %>
       </div>
       <div class="row">
-        備考欄：<%= post.remarks %>
+        <b>備考欄：</b><%= post.remarks %>
       </div>
       <div class="row justify-content-around my-5">
           <%= link_to "投稿を編集する", edit_admin_post_path(post.id), class: "btn btn-success btn-sm" %>

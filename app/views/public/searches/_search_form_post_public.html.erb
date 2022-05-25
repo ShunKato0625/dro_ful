@@ -4,7 +4,8 @@
       <%= f.text_field :keyword , placeholder:"タイトル名・都道府県名・申請項目名で検索",class:"col-8" %>
       <%= f.button :type => "submit", class: "btn btn-outline-success" do %>
         <i class="fas fa-search"></i>
-      <% end %>
+      <% end %><br>
+      <%= "※都道府県名は〇〇県と検索ください。その他は部分一致で検索可能です。" %>
     <% end %>
   </div>
 <% end %>

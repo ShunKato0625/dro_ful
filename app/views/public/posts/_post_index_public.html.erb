@@ -1,35 +1,46 @@
  <div class="row">
     <% posts.each do |post| %>
-      <div class = "my-2 p-2 table-background text-center" >
+      <div class = "my-2 p-2 post-index-card text-center" >
         <%= link_to post_path(post.id) do %>
-          <%= image_tag post.image, size: "250x220" %>
+          <%= image_tag post.image, size: "320x240", class:"col" %>
           <div class="row justify-content-around">
-            <p class="col card-title text-dark pt-2"><%= post.title %></p>
+            <p class="col card-title text-dark pt-3"><%= post.title %></p>
           </div>
           <div class="row justify-content-around">
-            <p class="col card-title text-dark pt-2"><%= post.prefecture.name %></p>
+            <p class="col card-title text-dark"><%= post.prefecture.name %></p>
           </div>
           <div class="row align-item-center">
             <div class="col">
               <%= render "shared/posts/static_rate", post: post %>
             </div>
           </div>
-          <div class="row justify-content-around">
-            <%if customer_signed_in? %>
-              <i class="fas fa-eye"></i><%= post.impressions_count %>
-                <% if post.customer_id != current_customer.id  %>
+          <div class="row justify-content-center">
+            <% if customer_signed_in? %>
+              <div class="col">
+                 <i class="far fa-eye"></i><%= post.impressions_count %>
+              </div>
+              <% if post.customer_id != current_customer.id  %>
+                <div class="col">
                   <div id ="favorite_btn_<%= post.id %>">
                     <%= render 'public/favorites/favorite', post: post %>
                   </div>
-                <% else %>
-                  <i class="fas fa-thumbs-up" aria-hidden="true" style="color: black;"></i>
+                </div>
+              <% else %>
+
+                  <i class="far fa-thumbs-up" aria-hidden="true" style="color: black;"></i>
                   <%= post.favorites.count %>
-                <% end %>
-              <i class="fas fa-comment-alt"></i><%= post.post_comments.count %>
+
+              <% end %>
+              <div class="col">
+                <i class="far fa-comment-dots"></i><%= post.post_comments.count %>
+              </div>
             <% end %>
           </div>
           <div class="row justify-content-around">
-            <%= post.shooting_date %>
+            <div class="col mt-3 ml-2">
+              <%= post.created_at.to_s(:datetime_jp) %>
+            </div>
+            <div class="col mt-2 mr-2">
               <% if post.customer.is_deleted == false %>
                 <%= link_to customer_path(post.customer.id) do %>
                   <%= image_tag post.customer.get_profile_image(40,40) ,class: "rounded-circle"%>
@@ -38,8 +49,12 @@
               <% else %>
                 <%= post.customer.nick_name %>
               <% end %>
+            </div>
           </div>
         <% end %>
       </div>
     <% end %>
+  </div>
+  <div class="d-flex justify-content-center pt-5">
+      <%= paginate posts %>
   </div>

@@ -1,13 +1,13 @@
  <div class="row post-index">
     <% posts.each do |post| %>
-      <div class = "my-2 p-2 table-background text-center" >
+      <div class = "my-2 p-2 post-index-card text-center" >
         <%= link_to admin_post_path(post.id) do %>
           <div class="row">
             <p class="col card-title text-dark">投稿ID：<%= post.id %></p>
           </div>
           <%= image_tag post.image, size: "320x240", class:"col" %>
           <div class="row justify-content-around">
-            <p class="col sss card-title text-dark pt-3"><%= post.title %></p>
+            <p class="col card-title text-dark pt-3"><%= post.title %></p>
           </div>
           <div class="row justify-content-around">
             <p class="col card-title text-dark"><%= post.prefecture.name %></p>
@@ -19,13 +19,13 @@
           </div>
           <div class="row justify-content-center">
             <div class="col-4">
-              <i class="fas fa-eye"></i><%= post.impressions_count %>
+              <i class="far fa-eye"></i><%= post.impressions_count %>
             </div>
             <div class="col-4">
-              <i class="fas fa-thumbs-up" aria-hidden="true" style="color: black;"></i><%= post.favorites.count %>
+              <i class="far fa-thumbs-up"></i><%= post.favorites.count %>
             </div>
             <div class="col-4">
-              <i class="fas fa-comment-alt"></i><%= post.post_comments.count %>
+              <i class="far fa-comment-dots"></i><%= post.post_comments.count %>
             </div>
           </div>
           <div class="row justify-content-around">
@@ -43,6 +43,6 @@
       </div>
     <% end %>
   </div>
-  <div class="d-flex justify-content-center py-3">
+  <div class="d-flex justify-content-center pt-5">
       <%= paginate posts %>
   </div>

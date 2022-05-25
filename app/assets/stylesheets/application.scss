@@ -88,12 +88,24 @@ h1{
   padding:0 20px;
 }
 
-.table-background {
+.post-index-card {
   background-color: #FFF;
   opacity: 0.9;
   border-radius: 2%;
   width: 30%;
   margin: 0 5px;
+}
+
+.customer-card {
+  background-color: #FFF;
+  opacity: 0.9;
+  border-radius: 2%;
+}
+
+.table-background {
+  background-color: #FFF;
+  opacity: 0.9;
+  border-radius: 2%;
 }
 
 .post-show {
@@ -247,4 +259,8 @@ body.fixed {
   color: #808080;
   cursor: pointer;
   font-weight: bold;
+}
+
+.post-index-eye{
+  max-width: 0;
 }

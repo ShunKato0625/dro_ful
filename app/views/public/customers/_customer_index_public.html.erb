@@ -1,6 +1,6 @@
 <div class="row">
   <% customers.each do |customer| %>
-    <div class="my-2 mx-1 p-2 border table-background text-center">
+    <div class="my-2 mx-1 p-2 border customer-card text-center">
       <div onclick='window.location="<%= '/customers/' + customer.id.to_s %>"' role="link">
         <%= link_to customer_path(customer.id) do %>
           <%= image_tag customer.get_profile_image(200,200), class: "rounded-circle" %>

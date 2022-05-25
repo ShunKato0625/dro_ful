@@ -8,7 +8,7 @@ class Public::CustomersController < ApplicationController
 
   def show
     @customer = Customer.find(params[:id])
-    @posts = @customer.posts.page(params[:page]).per(4)
+    @posts = @customer.posts.page(params[:page]).per(6)
     if @customer.id == current_customer.id
       redirect_to customer_my_page_path(@customer.id)  #自分を選択した時はマイページに遷移させる
     end
