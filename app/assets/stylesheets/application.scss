@@ -15,6 +15,9 @@
  */
 
 @import "skippr";
+@import "about";
+@import "modal";
+@import "pagination";
 
  *{
    padding: 0;
@@ -40,46 +43,10 @@ header {
 footer {
   background-color: #003366;
   opacity: 0.7;
-
 }
 
-h1{
-  font-family: cursive;
-}
-
-.image1 {
-  background-image: image-url("image1.jpeg");
-}
-.image2 {
-  background-image: image-url("image2.jpeg");
-}
-.image3 {
-  background-image: image-url("image3.jpeg");
-}
-.image4 {
-  background-image: image-url("image4.jpeg");
-}
-.image5 {
-  background-image: image-url("image5.jpeg");
-}
-
-#slide{
-  width: 1000px;
-  height: 600px;
-}
-
-.card-text{
-  height: 400px;
-  width: 700px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  z-index: 9999;
-}
-
-.mini-title {
+// サブタイトルデザイン 新規登録・検索結果で使用
+.sub-title {
     color: 	#0000ee;/*文字色*/
   border: solid 3px #0000ee;/*線色*/
   padding: 0.5em;/*文字周りの余白*/
@@ -88,6 +55,7 @@ h1{
   padding:0 20px;
 }
 
+// post indexページのカード背景
 .post-index-card {
   background-color: #FFF;
   opacity: 0.9;
@@ -96,52 +64,33 @@ h1{
   margin: 0 5px;
 }
 
+// customer indexページのカード背景
 .customer-card {
   background-color: #FFF;
   opacity: 0.9;
   border-radius: 2%;
 }
-
+// テーブル背景
 .table-background {
   background-color: #FFF;
   opacity: 0.9;
   border-radius: 2%;
 }
 
-.post-show {
+// post showページの文字
+.post-show-character {
   line-height:45px;
   font-size:17px;
 }
 
-.post-show-card {
+// post showページの背景
+.post-show-background {
   background-color: #fffafa;
   opacity: 0.9;
   border-radius: 0.5em;
 }
 
-.profile_image {
-  border-radius: 50%;
-}
-
-[role="link"] {
-  cursor: pointer;
-}
-
-.pagination>li>a {
-  border: none;
-  color: #0066cc !important;
-}
-
-.pagination>.active>a {
-  background: #0066cc !important;
-  color: #fff !important
-}
-
-.pagination>li>a:hover {
-  background-color: #0066cc !important;
-  color: #fff !important;
-}
-
+// 各ページ見出し　斜めタイトル
 .heading {
 	position: relative;
 	padding-top: 50px;
@@ -168,66 +117,7 @@ h1{
 	font-style: italic;
 }
 
-.signup,.signin{
-  color: #FFF;
-}
-
-/* モーダル全体(背景＋本体) */
-.modal{
-  display: none;
-  position: fixed;
-  top: 0;
-  height: 100vh;
-  width: 100%;
-}
-
-/* モーダル背景 */
-.modal-bg{
-  position: absolute;
-  height: 100vh;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.8);
-}
-
-/* モーダル本体 */
-.modal-top-content-js{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  overflow: scroll; /* はみ出た部分はスクロールさせる */
-  height: 60%;/* これが無いと「overflow:scroll」が利かない */
-  width: 50% !important;/* これが無いと「overflow:scroll」が利かない */
-  background: #eeeeee;
-  padding: 30px;
-  border-radius: 10px;
-}
-
-/* モーダル本体 */
-.modal-questions-content-js{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  overflow: scroll; /* はみ出た部分はスクロールさせる */
-  height: 90%;/* これが無いと「overflow:scroll」が利かない */
-  width: 60% !important;/* これが無いと「overflow:scroll」が利かない */
-  background: #eeeeee;
-  padding: 50px 100px;
-  border-radius: 10px;
-}
-
-/* モーダルウィンドウ表示中に記事本体を固定 */
-body.fixed {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
-}
-
-
-
-/* トップ点滅 */
+// トップページモーダル案内　点滅
 .blinking{
     -webkit-animation:blink 1.5s ease-in-out infinite alternate;
     -moz-animation:blink 1.5s ease-in-out infinite alternate;
@@ -259,4 +149,12 @@ body.fixed {
   color: #808080;
   cursor: pointer;
   font-weight: bold;
+}
+
+[role="link"] {
+  cursor: pointer;
+}
+
+.signup,.signin{
+  color: #FFF;
 }

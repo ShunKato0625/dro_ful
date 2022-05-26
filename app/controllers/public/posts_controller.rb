@@ -64,4 +64,5 @@ class Public::PostsController < ApplicationController
                                   request:[]
                                 )
   end
+
 end

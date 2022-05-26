@@ -1,26 +1,27 @@
-<div class="post-show-card px-5 mt-3">
+<div class="post-show-background px-5 mt-3">
   <div class='row pt-5'>
     <div class="col-6 text-center ">
       <%= image_tag post.image,size: "480x360" %>
-      <div class="row justify-content-center" style="line-height:40px">
+      <div class="row mt-2 justify-content-center" style="line-height:40px">
           撮影日：<%= post.shooting_date %>
       </div>
       <div class="row justify-content-center px-3" style="line-height:40px">
         <% if post.customer.is_deleted == false %>
-          <%= link_to customer_path(post.customer.id) do %>
-            投稿者：<%= image_tag post.customer.get_profile_image(40,40) ,class: "profile_image mx-3" %>
-                    <%= post.customer.nick_name %>
-          <% end %>
+            投稿者：<%= link_to customer_path(post.customer.id) do %>
+                      <%= image_tag post.customer.get_profile_image(40,40) ,class: "profile_image mx-3" %>
+                      <%= post.customer.nick_name %>
+                    <% end %>
         <% else %>
           投稿者：<%= post.customer.nick_name %>  (退会したユーザー）
         <% end %>
       </div>
-      <div class="row" style="line-height:40px">
+      <div class="row mt-4">
         <% if customer_signed_in? %>
-          <div class="col d-flex justify-content-end">
-            <i class="fas fa-eye"></i><%= post.impressions_count %>
+          <div class="col-6 d-flex justify-content-end">
+            <i class="far fa-eye"></i>
+            <%= post.impressions_count %>
           </div>
-          <div class="col d-flex justify-content-start">
+          <div class="col-6 d-flex justify-content-start">
             <% if post.customer_id != current_customer.id  %>
               <div id ="favorite_btn_<%= post.id %>">
                 <%= render 'public/favorites/favorite', post: post %>
@@ -34,32 +35,32 @@
       </div>
     </div>
 
-    <div class="col-6 post-show">
+    <div class="col-6 post-show-character">
       <div class="row">
-        撮影場所：<%= post.title %>
+        <b>撮影場所：</b><%= post.title %>
       </div>
       <div class="row">
-        都道府県：<%= post.prefecture.name %>
+        <b>都道府県：</b><%= post.prefecture.name %>
       </div>
       <div class="row">
-        アクセス：<%= post.access %>
+        <b>アクセス：</b><%= post.access %>
       </div>
       <div class="row">
-        機体名：<%= post.drone_type %>
+        <b>機体名：</b><%= post.drone_type %>
       </div>
       <div class="row">
-        申請：<% post.get_request_strings.each_with_index do |req, index| %>
+        <b>申請：</b><% post.get_request_strings.each_with_index do |req, index| %>
         <%= req %><% if index != post.get_request_strings.size - 1%>,&nbsp;<%end%>
         <% end %>
       </div>
       <div class="row">
-        許可：<%= post.authorization %>
+        <b>許可：</b><%= post.authorization %>
       </div>
       <div class="row">
-        オススメ度：<%= render "shared/posts/static_rate", post: post %>
+        <b>オススメ度：</b><%= render "shared/posts/static_rate", post: post %>
       </div>
       <div class="row">
-        備考欄：<%= post.remarks %>
+        <b>備考欄：</b><%= post.remarks %>
       </div>
       <% if customer_signed_in? %>
         <div class="row justify-content-around">

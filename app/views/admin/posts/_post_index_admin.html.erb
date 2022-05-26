@@ -1,45 +1,45 @@
  <div class="row post-index">
     <% posts.each do |post| %>
       <div class = "my-2 p-2 post-index-card text-center" >
+        <div class="row">
+          <p class="col card-title text-dark">投稿ID：<%= post.id %></p>
+        </div>
         <%= link_to admin_post_path(post.id) do %>
-          <div class="row">
-            <p class="col card-title text-dark">投稿ID：<%= post.id %></p>
-          </div>
           <%= image_tag post.image, size: "320x240", class:"col" %>
-          <div class="row justify-content-around">
-            <p class="col card-title text-dark pt-3"><%= post.title %></p>
-          </div>
-          <div class="row justify-content-around">
-            <p class="col card-title text-dark"><%= post.prefecture.name %></p>
-          </div>
-          <div class="row align-item-center">
-            <div class="col">
-              <%= render "shared/posts/static_rate", post: post %>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-4">
-              <i class="far fa-eye"></i><%= post.impressions_count %>
-            </div>
-            <div class="col-4">
-              <i class="far fa-thumbs-up"></i><%= post.favorites.count %>
-            </div>
-            <div class="col-4">
-              <i class="far fa-comment-dots"></i><%= post.post_comments.count %>
-            </div>
-          </div>
-          <div class="row justify-content-around">
-            <div class="col mt-3 ml-2">
-              <%= post.created_at.to_s(:datetime_jp) %>
-            </div>
-            <div class="col mt-2 mr-2">
-              <%= link_to admin_customer_path(post.customer.id) do %>
-                <%= image_tag post.customer.get_profile_image(40,40) ,class: "rounded-circle" %>
-                <%= post.customer.nick_name %>
-              <% end %>
-            </div>
-          </div>
         <% end %>
+        <div class="row justify-content-around">
+          <p class="col card-title text-dark pt-3"><%= post.title %></p>
+        </div>
+        <div class="row justify-content-around">
+          <p class="col card-title text-dark"><%= post.prefecture.name %></p>
+        </div>
+        <div class="row align-item-center">
+          <div class="col">
+            <%= render "shared/posts/static_rate", post: post %>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-4">
+            <i class="far fa-eye"></i><%= post.impressions_count %>
+          </div>
+          <div class="col-4">
+            <i class="far fa-thumbs-up"></i><%= post.favorites.count %>
+          </div>
+          <div class="col-4">
+            <i class="far fa-comment-dots"></i><%= post.post_comments.count %>
+          </div>
+        </div>
+        <div class="row justify-content-around">
+          <div class="col mt-3 ml-2">
+            <%= post.created_at.to_s(:datetime_jp) %>
+          </div>
+          <div class="col mt-2 mr-2">
+            <%= link_to admin_customer_path(post.customer.id) do %>
+              <%= image_tag post.customer.get_profile_image(40,40) ,class: "rounded-circle" %>
+              <%= post.customer.nick_name %>
+            <% end %>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>
