@@ -20,23 +20,23 @@
           <td><%= current_customer.last_name %>　<%= current_customer.first_name %></td>
         </tr>
         <tr>
-          <th class="table-active">カナ</th>
+          <th class="col-4 table-active">カナ</th>
           <td><%= current_customer.last_name_kana %>　<%= current_customer.first_name_kana %></td>
         <tr>
-          <th class="table-active">ニックネーム</th>
+          <th class="col-4 table-active">ニックネーム</th>
           <td><%= current_customer.nick_name %></td>
         </tr>
         <tr>
-          <th class="table-active">メールアドレス</th>
+          <th class="col-4 table-active">メールアドレス</th>
           <td><%= current_customer.email %></td>
         </tr>
         <tr>
-          <th class="table-active">自己紹介</th>
+          <th class="col-4 table-active">自己紹介</th>
           <td><%= current_customer.introduction %></td>
         </tr>
       </tbody>
     </table>
-    <div class="col-5">
+    <div class="offset-1 col-3 d-flex">
        <%= image_tag current_customer.get_profile_image(200,200), class: "rounded-circle" %>
     </div>
   </div>

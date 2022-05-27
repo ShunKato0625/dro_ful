@@ -83,8 +83,8 @@ footer {
   font-size:17px;
 }
 
-// post showページの背景
-.post-show-background {
+// post show,edit,newページの背景
+.post-show-background, .post-edit-background, .post-new-background {
   background-color: #fffafa;
   opacity: 0.9;
   border-radius: 0.5em;
@@ -157,4 +157,8 @@ footer {
 
 .signup,.signin{
   color: #FFF;
+}
+
+.container{
+  margin: 0 auto;
 }

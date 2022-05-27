@@ -15,7 +15,7 @@
       </tr>
     </tbody>
   </table>
-  <div class="offset-1 col-3 d-flex align-items-center">
+  <div class="offset-1 col-3">
      <%= image_tag customer.get_profile_image(150,150), class: "rounded-circle" %>
   </div>
 </div>
@@ -26,3 +26,6 @@
   </div>
 </div>
 <%= render 'public/posts/post_index_public', posts: posts, customer: customer %>
+<div class="d-flex justify-content-center pt-5">
+    <%= paginate posts %>
+</div>
