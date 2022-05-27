@@ -9,7 +9,10 @@ FactoryBot.define do
   rate                {"3"}
   shooting_date       {"2022/01/01"}
   request             {"該当なし"}
-  image { [ Rack::Test::UploadedFile.new(Rails.root.join( 'app/assets/images/test.jpeg'), 'app/assets/images/test.jpeg')  ]} #画像はjson型なので[]で画像データを囲む必要がある。
-  association :customer #@postモデルは@userが投稿するので、関連付けを定義する。
+  customer
+
+  after(:build) do |post|
+   post.image.attach(io: File.open('spec/fixtures/test.jpeg'), filename: 'test.jpeg', content_type: 'image/jpeg')
+  end
  end
 end
