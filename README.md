@@ -54,4 +54,5 @@
 
 ## 使用素材
 - テストデータ画像 https://www.photo-ac.com/
+- 素材（画像）https://www.istockphoto.com/en
 - ロゴ作成 https://www.designevo.com/jp/
