@@ -1,5 +1,5 @@
 <div class="row">
-　<% favorites.each do |favorite| %>
+  <% favorites.each do |favorite| %>
     <div class = "my-2 p-2 post-index-card text-center" >
       <%= link_to post_path(favorite.post.id) do %>
         <%= image_tag favorite.post.image, size: "320x240", class:"col" %>

@@ -12,8 +12,6 @@ RSpec.describe 'Customerモデルのテスト', type: :model do
     let!(:other_customer) { create(:customer) }
     let(:customer) { build(:customer) }
 
-    customer = FactoryBot.build(:customer,)
-
     context 'nick_nameカラム' do
       it '空欄でないこと' do
         customer.nick_name = ''
