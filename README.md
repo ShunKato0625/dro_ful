@@ -44,6 +44,7 @@
 - ER図：https://drive.google.com/file/d/12Fm2z7Pq3TpsvOzAMHO9Ww1mECUBLYAF/view?usp=sharing
 - テーブル定義書：https://docs.google.com/spreadsheets/d/1bRm2ryM8rAXFlwbK-aXPqD0bvx9Csin3/edit?usp=sharing&ouid=100860413197556118043&rtpof=true&sd=true
 - 詳細設計：https://docs.google.com/spreadsheets/d/10KZGiTOTWl58By6MJdxO2qXDKtk3T72b/edit?usp=sharing&ouid=100860413197556118043&rtpof=true&sd=true
+- テスト仕様書：https://docs.google.com/spreadsheets/d/1Jq2bxkW_uqVYFqhY5zkNjdXWhxxUNts5189rZIoA5Is/edit?usp=sharing
 
 ## 開発環境
 - OS：Linux(CentOS)
@@ -53,6 +54,6 @@
 - IDE：Cloud9
 
 ## 使用素材
-- テストデータ画像 https://www.photo-ac.com/
-- 素材（画像）https://www.istockphoto.com/en
-- ロゴ作成 https://www.designevo.com/jp/
+- テストデータ画像：https://www.photo-ac.com/
+- 素材（画像）：https://www.istockphoto.com/en
+- ロゴ作成：https://www.designevo.com/jp/
