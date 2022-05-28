@@ -6,4 +6,7 @@
     <%= render 'admin/searches/search_form_post_admin' %>
   </div>
     <%= render 'admin/posts/post_index_admin', posts: @posts, customer: @customer %>
+    <div class="d-flex justify-content-center pt-5">
+      <%= paginate @posts %>
+    </div>
 </div>

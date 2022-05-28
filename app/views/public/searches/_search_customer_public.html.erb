@@ -1,5 +1,5 @@
 <% if customers.exists? %>
   <%= render 'public/customers/customer_index_public', customers: @customers %>
 <% else %>
-  <div class="h2 row text-center col-6 mt-5 ml-3">一致する検索結果がありません</div>
+  <div class="h2 row text-center col-8 mt-5 ml-3">一致する検索結果がありません</div>
 <% end %>

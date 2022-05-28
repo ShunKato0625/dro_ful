@@ -2,7 +2,7 @@ class Public::SearchesController < ApplicationController
   before_action :authenticate_customer!
 
   def search_post
-    @posts = Post.search_post(params[:keyword]).page(params[:page]).per(8)
+    @posts = Post.search_post(params[:keyword]).page(params[:page]).per(9)
   end
 
   def search_customer
