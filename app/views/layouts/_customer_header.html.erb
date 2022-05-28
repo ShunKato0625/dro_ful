@@ -12,7 +12,7 @@
       　<div>
           <ul class="navbar-nav ml-auto d-block">
             <li class="d-inline-block">
-              <%= link_to "マイページ", customer_my_page_path(current_customer.id), class: 'nav-link mx-2', style:"color:white;"  %>
+              <%= link_to "マイページ", customer_my_page_path(current_customer.id), class: 'nav-link mx-2', style:"color:white;",data: {"turbolinks"=>false}  %>
             </li>
             <li class="d-inline-block">
               <%= link_to "会員一覧", customers_path, class: 'nav-link mx-2', style:"color:white;"  %>

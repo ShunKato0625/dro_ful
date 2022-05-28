@@ -6,6 +6,6 @@ class Public::SearchesController < ApplicationController
   end
 
   def search_customer
-    @customers = Customer.search_customer(params[:keyword]).where(is_deleted: false).page(params[:page]).per(9)
+    @customers = Customer.search_customer(params[:keyword]).where(is_deleted: false).page(params[:page]).per(10)
   end
 end
