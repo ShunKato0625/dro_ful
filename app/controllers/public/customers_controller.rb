@@ -3,7 +3,7 @@ class Public::CustomersController < ApplicationController
   before_action :ensure_correct_customer, only: [:edit, :update]
 
   def index
-    @customers = Customer.all.where(is_deleted: false).page(params[:page]).per(10)
+    @customers = Customer.all.where(is_deleted: false).page(params[:page]).per(9)
   end
 
   def show
