@@ -11,7 +11,7 @@
         <% if post_comment.customer_id == nil %>
           <%= "管理者" %>
         <% else %>
-          <%= link_to admin_customer_path(post.customer.id) do %>
+          <%= link_to admin_customer_path(post_comment.customer.id) do %>
             <%= image_tag post_comment.customer. get_profile_image(40,40),class: "rounded-circle" %>
             <%= post_comment.customer.nick_name %>
           <% end %>
