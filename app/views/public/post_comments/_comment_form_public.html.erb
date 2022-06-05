@@ -12,18 +12,3 @@
     </div>
   </div>
 <% end %>
-
-<%= form_with model: [post, post_comment], local: false do |f| %>
-  <div class="errors">
-    <%= render 'layouts/errors', obj: f.object %>
-  </div>
-  <div class="row">
-    <%= f.label :コメント, class: "col-2 text-right" %>
-    <%= f.text_area :comment, rows: '5', class: "col-8", placeholder: "コメントをここに" %>
-  </div>
-  <div class="row mb-5 mt-3">
-    <div class="col-3 text-right">
-      <%= f.submit "コメントする", class: "btn btn-success" %>
-    </div>
-  </div>
-<% end %>
