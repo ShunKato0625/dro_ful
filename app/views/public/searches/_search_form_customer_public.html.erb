@@ -6,3 +6,12 @@
     <% end %>
   <% end %>
 </div>
+
+<div class="col-6 form-inline d-block text-right">
+  <%= form_with url: search_customer_path, method: :get, local: true do |f| %>
+    <%= f.text_field :keyword , placeholder:"ユーザー名（ニックネーム)で検索", class:"col-8" %>
+    <%= f.button :type => "submit", class: "btn btn-outline-success" do %>
+      <i class="fas fa-search"></i>
+    <% end %>
+  <% end %>
+</div>
