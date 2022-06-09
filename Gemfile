@@ -71,3 +71,4 @@ gem "enum_help"
 gem 'devise-i18n'
 gem 'impressionist'
 gem 'active_hash'
+gem "aws-sdk-s3", require: false
