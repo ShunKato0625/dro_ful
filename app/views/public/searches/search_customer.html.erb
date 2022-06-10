@@ -9,3 +9,15 @@
     <%= paginate @customers %>
   </div>
 </div>
+
+<div class="container py-5">
+  <div class="row mb-4">
+    <div class="col-5 text-center">
+      <h2 class="sub-title">メンバー検索結果</h2>
+    </div>
+  </div>
+  <%= render 'public/searches/search_customer_public', customers: @customers %>
+  <div class="d-flex justify-content-center pt-5">
+    <%= paginate @customers %>
+  </div>
+</div>
