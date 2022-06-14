@@ -46,6 +46,7 @@ class Post < ApplicationRecord
   end
 
   # 配列の"[" "]"を消して文字列の配列にして返す
+  # 配列の"[" "]"を消して文字列の配列にして返す
   def get_request_strings
     self.request.split(',').map {|m| m.delete('[]"\\\\')}
   end
