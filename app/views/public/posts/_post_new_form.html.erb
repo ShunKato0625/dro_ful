@@ -84,3 +84,41 @@
       <% end %>
   </div>
 </div>
+
+<div class="map-wrap">
+  <div id="map" class="map"></div>
+</div>
+
+<!-- "YOUR_API_KEY" の部分に、作成したAPIキーを貼り付ける -->
+<script src="https://maps.googleapis.com/maps/api/js?key="+<%= ENV["GOOGLE_API_KEY"] %> async defer></script>
+
+<!-- 👇このjsファイル内にAPIを使用した記述を書く（後述） -->
+<script>
+  window.initMap = () => {
+
+    let map;
+
+    const area = document.getElementById("map"); // マップを表示させるHTMLの箱
+　　// マップの中心位置(例:原宿駅)
+    const center = {
+      lat: 35.667379,
+      lng: 139.7054965
+    };
+
+    //マップ作成
+    map = new google.maps.Map(area, {
+      center,
+      zoom: 17,
+    });
+
+    //マーカーオプション設定👇追記
+    const markerOption = {
+      position: center, // マーカーを立てる位置を指定
+      map: map, // マーカーを立てる地図を指定
+    }
+
+    //マーカー作成
+    const marker = new google.maps.Marker(markerOption);
+
+  }
+</script>
