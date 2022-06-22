@@ -61,7 +61,7 @@ class Public::PostsController < ApplicationController
     params.require(:post).permit(:title, :shooting_date, :access,
                                  :drone_type, :authorization,
                                  :remarks, :rate, :image, :prefecture_id,
-                                  request:[]
+                                 :lat, :lng, request:[]
                                 )
   end
 

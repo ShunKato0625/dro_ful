@@ -78,47 +78,88 @@
           <%= f.text_area :remarks, class:"form-control post_remarks col-10" %>
         </div>
 
-        <div class="form-group row">
+        <h6>撮影ポイント<span style="color:red">(入力必須ではありません)</span></h6>
+        <input id="address" type="textbox" placeholde="場所の検索">
+        <input type="button" value="検索" onclick="codeAddress()">
+        <p>マーカーをドラック＆ドロップで位置の調整ができます。<p>
+          <div class="actions">
+            <%= f.label :lat,"緯度" %>
+            <%= f.text_field :lat, placeholder:"自動入力", id: :lat %>
+            <%= f.label :lng,"経度" %>
+            <%= f.text_field :lng, placeholder:"自動入力", id: :lng %>
+            <%= f.submit %>
+          </div>
+
+        <div id='map'></div>
+
+        <div class="form-group row pt-3">
           <%= f.submit "投稿する", class:"btn btn-success" %>
         </div>
       <% end %>
   </div>
 </div>
 
-<div class="map-wrap">
-  <div id="map" class="map"></div>
-</div>
+<style>
+#map {
+  height: 500px;
+  width: 90%;
+}
+</style>
+
+<script>
+//初期マップの設定
+let map
+let marker
+function initMap(){
+  geocoder = new google.maps.Geocoder()
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    center:  {lat: 35.6803997, lng:139.7690174},  //東京
+    zoom: 15,
+
+  });
+}
+
+//検索後のマップ作成
+let geocoder
+let aft
+function codeAddress(){
+  let inputAddress = document.getElementById('address').value;
+  geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+    if (status == 'OK') {
+        //マーカーが複数できないようにする
+        if (aft == true){
+            marker.setMap(null);
+        }
+
+        //新しくマーカーを作成する
+        map.setCenter(results[0].geometry.location);
+            marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location,
+            draggable: true // ドラッグ可能にする
+        });
+
+        //二度目以降か判断
+        aft = true
+
+        //検索した時に緯度経度を入力する
+        document.getElementById('lat').value = results[0].geometry.location.lat();
+        document.getElementById('lng').value = results[0].geometry.location.lng();
+
+        // マーカーのドロップ（ドラッグ終了）時のイベント
+        google.maps.event.addListener( marker, 'dragend', function(ev){
+            // イベントの引数evの、プロパティ.latLngが緯度経度
+            document.getElementById('lat').value = ev.latLng.lat();
+            document.getElementById('lng').value = ev.latLng.lng();
+        });
+    } else {
+      alert('該当する結果がありませんでした：' + status);
+    }
+  });
+}
+
+</script>
 
 <!-- "YOUR_API_KEY" の部分に、作成したAPIキーを貼り付ける -->
 <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY'] %>" async defer></script>
-
-<!-- 👇このjsファイル内にAPIを使用した記述を書く -->
-<script>
-  window.initMap = () => {
-
-    let map;
-
-    const area = document.getElementById("map"); // マップを表示させるHTMLの箱
-　　// マップの中心位置(東京)
-    const center = {
-      lat: 35.6803997,
-      lng: 139.7690174
-    };
-
-    //マップ作成
-    map = new google.maps.Map(area, {
-      center,
-      zoom: 15,
-    });
-
-    //マーカーオプション設定👇追記
-    const markerOption = {
-      position: center, // マーカーを立てる位置を指定
-      map: map, // マーカーを立てる地図を指定
-    }
-
-    //マーカー作成
-    const marker = new google.maps.Marker(markerOption);
-
-  }
-</script>
