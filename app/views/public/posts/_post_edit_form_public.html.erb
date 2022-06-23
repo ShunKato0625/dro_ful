@@ -89,7 +89,7 @@
             <%= f.text_field :lng, placeholder:"自動入力", id: :lng %>
           </div>
 
-        <div id='map'></div>
+        <div id='map', class="mt-3"></div>
 
         <div class="form-group row pt-3">
           <%= f.submit "変更する", class:"btn btn-success" %>
@@ -101,8 +101,8 @@
 
 <style>
 #map {
-  height: 500px;
-  width: 90%;
+  height: 400px;
+  width: 100%;
 }
 </style>
 
@@ -141,7 +141,7 @@ function codeAddress(){
         });
 
         //二度目以降か判断
-        aft = false
+        aft = true
 
         //検索した時に緯度経度を入力する
         document.getElementById('lat').value = results[0].geometry.location.lat();
