@@ -26,7 +26,9 @@ class Post < ApplicationRecord
   validates :shooting_date     , presence: true
   validates :image             , presence: true
   validates :request           , presence: true
-  validates :prefecture_id        , presence: true
+  validates :prefecture_id     , presence: true
+  validates :lat               , presence: true
+  validates :lng               , presence: true
 
   def favorited_by?(customer)
     favorites.exists?(customer_id: customer.id)
