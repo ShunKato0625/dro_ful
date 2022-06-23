@@ -9,25 +9,25 @@ Admin.create!(email: "test@example.com", password: "adminlogin")
 
 Customer.create!(
   [
-    {email: 'guest@guest.com', last_name: 'ゲスト',first_name:'太郎',last_name_kana: 'ゲスト',first_name_kana:'タロウ', nick_name: 'ゲストユーザー', password: 'guestlogin', profile_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/guest.jpeg"), filename:"guest.jpeg")},
-    {email: 'shun@test.com', last_name: '加藤',first_name:'駿',last_name_kana: 'カトウ',first_name_kana:'シュン', nick_name: 'かっしゅ', password: '19910625', profile_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/shun.jpeg"), filename:"shun.jpeg")},
-    {email: 'mune@test.com',  last_name: '長澤',first_name:'心大',last_name_kana: 'ナガサワ',first_name_kana:'ムネヒロ', nick_name: 'なが', password: 'password'},
-    {email: 'kuri@test.com',  last_name: '栗原',first_name:'隆太',last_name_kana: 'クリハラ',first_name_kana:'リュウタ', nick_name: 'くり', password: 'password'},
-    {email: 'saburo@test.com',  last_name: '四十万',first_name:'三郎',last_name_kana: 'シジマ',first_name_kana:'サブロウ', nick_name: 'さぶろー', password: 'password'},
-    {email: 'hepu@test.com',  last_name: '菊地',first_name:'雄太',last_name_kana: 'キクチ',first_name_kana:'ユウタ', nick_name: 'へぷ', password: 'password'},
-    {email: 'ryota@test.com',  last_name: '斉藤',first_name:'亮太',last_name_kana: 'サイトウ',first_name_kana:'リョウタ', nick_name: 'さいとー', password: 'password'},
-    {email: 'shin@test.com',  last_name: '布目',first_name:'普',last_name_kana: 'ヌノメ',first_name_kana:'シン', nick_name: 'しん', password: 'password'},
-    {email: 'otoya@test.com',  last_name: '和泉',first_name:'音弥',last_name_kana: 'イズミ',first_name_kana:'オトヤ', nick_name: 'おとや', password: 'password'},
-    {email: 'tsubasa@test.com',  last_name: '鈴木',first_name:'翔',last_name_kana: 'スズキ',first_name_kana:'ツバサ', nick_name: 'つー', password: 'password'},
-    {email: 'koji@test.com',  last_name: '長澤',first_name:'浩二',last_name_kana: 'ナガサワ',first_name_kana:'コウジ', nick_name: 'こーちゃん', password: 'password'},
-    {email: 'kono@test.com',  last_name: '河野',first_name:'幹久',last_name_kana: 'コウノ',first_name_kana:'ミキヒサ', nick_name: 'みっきー', password: 'password'},
-    {email: 'rachi@test.com',  last_name: '良知',first_name:'陽翔',last_name_kana: 'ラチ',first_name_kana:'ヨウショウ', nick_name: 'らち', password: 'password'},
-    {email: 'taiki@test.com',  last_name: '毛塚',first_name:'大貴',last_name_kana: 'ケヅカ',first_name_kana:'タイキ', nick_name: 'けづ', password: 'password'},
-    {email: 'kei@test.com',  last_name: '岩澤',first_name:'圭',last_name_kana: 'イワサワ',first_name_kana:'ケイ', nick_name: 'けい', password: 'password'},
-    {email: 'murakami@test.com',  last_name: '村上',first_name:'宗隆',last_name_kana: 'ムラカミ',first_name_kana:'ムネタカ', nick_name: '村神様', password: 'password'},
-    {email: 'aoki@test.com',  last_name: '青木',first_name:'宣親',last_name_kana: 'アオキ',first_name_kana:'ノリチカ', nick_name: 'のりさん', password: 'password'},
-    {email: 'siomi@test.com',  last_name: '塩見',first_name:'泰隆',last_name_kana: 'シオミ',first_name_kana:'ヤスタカ', nick_name: 'しおみ', password: 'password'},
-    {email: 'yamada@test.com',  last_name: '山田',first_name:'哲人',last_name_kana: 'ヤマダ',first_name_kana:'テツト', nick_name: 'てっと', password: 'password'}
+    {email: 'guest@guest.com', nick_name: 'ゲストユーザー', password: 'guestlogin', profile_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/guest.jpeg"), filename:"guest.jpeg")},
+    {email: 'shun@test.com', nick_name: 'かっしゅ', password: '19910625', profile_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/shun.jpeg"), filename:"shun.jpeg")},
+    {email: 'mune@test.com', nick_name: 'なが', password: 'password'},
+    {email: 'kuri@test.com', nick_name: 'くり', password: 'password'},
+    {email: 'saburo@test.com', nick_name: 'さぶろー', password: 'password'},
+    {email: 'hepu@test.com', nick_name: 'へぷ', password: 'password'},
+    {email: 'ryota@test.com', nick_name: 'さいとー', password: 'password'},
+    {email: 'shin@test.com', nick_name: 'しん', password: 'password'},
+    {email: 'otoya@test.com', nick_name: 'おとや', password: 'password'},
+    {email: 'tsubasa@test.com', nick_name: 'つー', password: 'password'},
+    {email: 'koji@test.com', nick_name: 'こーちゃん', password: 'password'},
+    {email: 'kono@test.com', nick_name: 'みっきー', password: 'password'},
+    {email: 'rachi@test.com', nick_name: 'らち', password: 'password'},
+    {email: 'taiki@test.com', nick_name: 'けづ', password: 'password'},
+    {email: 'kei@test.com', nick_name: 'けい', password: 'password'},
+    {email: 'murakami@test.com', nick_name: '村神様', password: 'password'},
+    {email: 'aoki@test.com', nick_name: 'のりさん', password: 'password'},
+    {email: 'siomi@test.com', nick_name: 'しおみ', password: 'password'},
+    {email: 'yamada@test.com', nick_name: 'てっと', password: 'password'}
   ]
 )
 

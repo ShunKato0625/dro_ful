@@ -11,10 +11,6 @@ class Customer < ApplicationRecord
   has_many :favorites      , dependent: :destroy
   has_many :favorited_posts, through: :favorites, source: :post
 
-  validates :last_name       , presence: true
-  validates :last_name_kana  , presence: true
-  validates :first_name      , presence: true
-  validates :first_name_kana , presence: true
   validates :nick_name       , presence: true,
                                uniqueness: true
   #validates :introduction    , presence: true
