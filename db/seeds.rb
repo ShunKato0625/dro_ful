@@ -34,7 +34,7 @@ Customer.create!(
 Post.create!(
   [
     {title: '江ノ島周辺（藤沢市）', access: '品川駅→藤沢駅→江ノ島駅　所要時間1時間程度', image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/enoshima.webp"), filename:"enoshima.webp"),
-    prefecture_id: '14', drone_type: 'DJI-AIR 2S', authorization: '湘南海上保安署(0466-00-0000)FAXで飛行計画書必要。藤沢警察署(0466-00-0000)', rate: '4.0', customer_id: '1',
+    prefecture_id: '14', drone_type: 'DJI-AIR 2S', authorization: '湘南海上保安署(0466-00-0000)FAXで飛行計画書必要。藤沢警察署(0466-00-0000)', rate: '4.0', customer_id: '1',lat: '', lng: ''
     shooting_date: '2022/2/18', request: '該当なし', remarks: '江ノ島は、観光客が多い場所であるが、海岸が続いている為、飛行開始場所も確保しやすく、ドローンには寛容であり、許可取りもスムーズに進むと思います。江ノ島上空は飛行できないので注意。'},
     {title: '城ヶ島（三浦市）', access: '品川駅→三崎口駅→城ヶ島行バス（20分）　所要時間1時間半程度', image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/jogashima.jpeg"), filename:"jogashima.jpeg"),
     prefecture_id: '14', drone_type: 'DJI-AIR 2S', authorization: '三崎警察署(0466-00-0000)', rate: '3.5', customer_id: '1',
