@@ -1,5 +1,6 @@
 class Public::PostsController < ApplicationController
   before_action :authenticate_customer!, except: [:show, :index]
+  before_action :correct_post, only: [:edit, :update, :destroy]
   impressionist :actions => [:show]
 
   def new
@@ -63,6 +64,13 @@ class Public::PostsController < ApplicationController
                                  :remarks, :rate, :image, :prefecture_id,
                                  :lat, :lng, request:[]
                                 )
+  end
+
+  def correct_post # []にはURLを打ったらユーザー詳細に返す
+    @post = Post.find(params[:id])
+    unless @post.customer.id == current_customer.id
+      redirect_to post_path, alert: 'このページへは遷移できません。'
+    end
   end
 
 end
