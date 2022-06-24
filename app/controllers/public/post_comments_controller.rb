@@ -13,7 +13,12 @@ class Public::PostCommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @customer = current_customer
     @post_comment = @post.post_comments.find(params[:id])
-    @post_comment.destroy
+    if @post_comment.customer_id == current_customer.id
+      @post_comment.destroy
+    else
+      redirect_to post_path(@post.id)
+      flash[:alert] = "他人のコメントは削除できません"
+    end
   end
 
   private
