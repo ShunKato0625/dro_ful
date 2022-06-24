@@ -53,14 +53,13 @@ class Public::CustomersController < ApplicationController
   def ensure_correct_customer # []にはURLを打ったらユーザー詳細に返す
     @customer = Customer.find(params[:id])
     unless @customer == current_customer
-      redirect_to customer_path(current_customer)
+      redirect_to customer_path(current_customer),alert: 'このページへは遷移できません。'
     end
   end
 
 
   def customer_params
-    params.require(:customer).permit(:last_name, :first_name, :last_name_kana, :first_name_kana,
-                                     :nick_name, :email, :introduction, :profile_image)
+    params.require(:customer).permit(:nick_name, :email, :introduction, :profile_image)
   end
 
 

@@ -57,13 +57,36 @@
         <b>備考欄：</b><%= post.remarks %>
       </div>
       <div class="row justify-content-around my-5">
-          <%= link_to "投稿を編集する", edit_admin_post_path(post.id), class: "btn btn-success btn-sm" %>
+          <%= link_to "投稿を編集する", edit_admin_post_path(post.id), class: "btn btn-success btn-sm" , data: {"turbolinks" => false} %>
           <%= link_to "投稿を削除する", admin_post_path(post.id), method: :delete, "data-confirm" => "本当に削除しますか？" ,class: "btn btn-danger btn-sm"%>
       </div>
     </div>
   </div>
 
-  <div class="row">
+  <div id='map', class="my-3"></div>
+
+  <!-- js部分 -->
+  <script>
+  //初期マップの設定
+  let map
+  let marker
+  function initMap(){
+    geocoder = new google.maps.Geocoder()
+
+    map = new google.maps.Map(document.getElementById('map'), {
+      center:  {lat: <%= post.lat %>, lng: <%= post.lng %>},
+      zoom: 15,
+    });
+
+     marker = new google.maps.Marker({
+      position:  {lat: <%= post.lat %>, lng: <%= post.lng %>},
+      map: map
+    });
+  }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY'] %>" async defer></script>
+
+   <div class="row">
     <div class="col">
       <div id="comments_area_<%= post.id %>">
         <%= render 'admin/post_comments/comment_index_admin', post: post, customer: customer %>

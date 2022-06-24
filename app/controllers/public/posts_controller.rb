@@ -1,5 +1,6 @@
 class Public::PostsController < ApplicationController
   before_action :authenticate_customer!, except: [:show, :index]
+  before_action :correct_post, only: [:edit, :update]
   impressionist :actions => [:show]
 
   def new
@@ -45,10 +46,15 @@ class Public::PostsController < ApplicationController
   end
 
   def destroy
-    post = Post.find(params[:id])
-    post.destroy
-    redirect_to posts_path
-    flash[:notice] = "投稿を削除しました"
+    @post = Post.find(params[:id])
+    if @post.customer_id == current_customer.id
+      @post.destroy
+      redirect_to posts_path
+      flash[:notice] = "投稿を削除しました"
+    else
+      redirect_to posts_path
+      flash[:alert] = "他人の投稿は削除できません"
+    end
   end
 
   def favorited_by?(customer)
@@ -63,6 +69,13 @@ class Public::PostsController < ApplicationController
                                  :remarks, :rate, :image, :prefecture_id,
                                  :lat, :lng, request:[]
                                 )
+  end
+
+  def correct_post # []にはURLを打ったらユーザー詳細に返す
+    @post = Post.find(params[:id])
+    unless @post.customer.id == current_customer.id
+      redirect_to post_path, alert: 'このページへは遷移できません。'
+    end
   end
 
 end
