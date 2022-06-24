@@ -4,7 +4,7 @@
         <div class="row">
           <p class="col card-title text-dark">投稿ID：<%= post.id %></p>
         </div>
-        <%= link_to admin_post_path(post.id) do %>
+        <%= link_to admin_post_path(post.id) , data: {"turbolinks" => false} do %>
           <%= image_tag post.image, size: "320x240", class:"col" %>
         <% end %>
         <div class="row justify-content-around">
