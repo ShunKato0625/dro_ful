@@ -64,6 +64,12 @@ footer {
   margin: 0 5px;
 }
 
+/*hoverをしたらボックスに影がつき、上に上がる*/
+.post-index-card:hover {
+	top:-3px;
+	box-shadow: 0 7px 10px rgba(0, 0, 0, 0.5);
+}
+
 // customer indexページのカード背景
 .customer-card {
   background-color: #FFF;
