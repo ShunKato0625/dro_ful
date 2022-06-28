@@ -18,6 +18,7 @@
 @import "about";
 @import "modal";
 @import "pagination";
+@import "@media_screen";
 
  *{
    padding: 0;
@@ -43,6 +44,10 @@ header {
 footer {
   background-color: #003366;
   opacity: 0.7;
+}
+
+.top-modal-text {
+  font-weight: bold;
 }
 
 // サブタイトルデザイン 新規登録・検索結果で使用
