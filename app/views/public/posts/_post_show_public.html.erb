@@ -1,7 +1,7 @@
 <div class="post-show-background px-5 mt-3 pb-4">
   <div class='row pt-5'>
-    <div class="col-6 text-center ">
-      <%= image_tag post.image,size: "480x360" %>
+    <div class="col-sm-6 text-center ">
+      <%= image_tag post.image,size: "480x360", class:"post-show-image" %>
       <div class="row mt-2 justify-content-center" style="line-height:40px">
           撮影日：<%= post.shooting_date %>
       </div>
@@ -35,7 +35,7 @@
       </div>
     </div>
 
-    <div class="col-6 post-show-character">
+    <div class="col-md-6 col-xs-12 post-show-character">
       <div class="row">
         <b>撮影場所：</b><%= post.title %>
       </div>

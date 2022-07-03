@@ -40,7 +40,7 @@
           <%= "管理者" %>
         <% else %>
           <%= link_to customer_path(post.customer.id) do %>
-            <%= image_tag post_comment.customer. get_profile_image(40,40),class: "rounded-circle" %>
+            <%= image_tag post_comment.customer. get_profile_image(40,40),class: "rounded-circle comment-image" %>
             <%= post_comment.customer.nick_name %>
           <% end %>
         <% end %>
