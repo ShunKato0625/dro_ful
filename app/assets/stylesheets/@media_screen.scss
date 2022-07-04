@@ -70,12 +70,21 @@
     width: 100%!important;
   }
 
-  .post-show-image{
-    width: 100%!important;
-  }
-
   .post-show-character{
     width: 100%!important;
+    margin: 0 20px!important;
+  }
+
+  .post-show-background {
+    padding: 0 0!important;
+  }
+
+  .post-show-image {
+    padding: 0 !important;
+  }
+
+  .comment-form {
+    margin: 0 15px;
   }
 
 }

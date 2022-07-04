@@ -1,7 +1,7 @@
-<div class="post-show-background px-5 mt-3 pb-4">
+<div class="post-show-background mt-3 pb-4">
   <div class='row pt-5'>
     <div class="col-sm-6 text-center ">
-      <%= image_tag post.image,size: "480x360", class:"post-show-image" %>
+      <%= image_tag post.image,size: "480x360", class:"col-12 col post-show-image" %>
       <div class="row mt-2 justify-content-center" style="line-height:40px">
           撮影日：<%= post.shooting_date %>
       </div>
@@ -72,7 +72,7 @@
       <% end %>
     </div>
   </div>
-  <div id='map', class="my-3"></div>
+  <div id='map', class="map my-3"></div>
 
   <!-- js部分 -->
   <script>
