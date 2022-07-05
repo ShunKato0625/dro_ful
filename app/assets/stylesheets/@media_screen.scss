@@ -93,4 +93,18 @@
     margin-right: 0!important;
   }
 
+  .member-index{
+    font-size: 26px!important;
+  }
+
+  .member-index::before {
+    font-size: 50px!important;
+  }
+
+  .customer-card {
+    width: 45%!important;
+    margin-right: 7px!important;
+    margin-left: 11px!important;
+  }
+
 }
