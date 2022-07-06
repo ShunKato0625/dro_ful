@@ -1,8 +1,8 @@
 <div class="row pt-5">
-  <table class="col-7 table border-bottom table-hover table-background">
+  <table class="col-md-7 col-12 table border-bottom table-hover table-background">
     <tbody>
       <tr>
-        <th class="col-4 table-active">ニックネーム</th>
+        <th class="col-md-4 col-4 table-active">ニックネーム</th>
         <% if customer.is_deleted == true %>
           <td><%= customer.nick_name %>  (退会したユーザー）</td>
         <% else %>
@@ -10,12 +10,12 @@
         <% end %>
       </tr>
       <tr>
-        <th class="col-4 table-active">自己紹介</th>
+        <th class="col-md-4 col-4 table-active">自己紹介</th>
         <td><%= customer.introduction %></td>
       </tr>
     </tbody>
   </table>
-  <div class="offset-1 col-3">
+  <div class="offset-md-1 col-md-3 col-9 offset-3">
      <%= image_tag customer.get_profile_image(150,150), class: "rounded-circle" %>
   </div>
 </div>
