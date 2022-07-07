@@ -2,7 +2,7 @@
   <table class="col-md-7 col-12 table border-bottom table-hover table-background">
     <tbody>
       <tr>
-        <th class="col-md-4 col-4 table-active">ニックネーム</th>
+        <th class="col-4 table-active">ニックネーム</th>
         <% if customer.is_deleted == true %>
           <td><%= customer.nick_name %>  (退会したユーザー）</td>
         <% else %>
@@ -10,7 +10,7 @@
         <% end %>
       </tr>
       <tr>
-        <th class="col-md-4 col-4 table-active">自己紹介</th>
+        <th class="col-4 table-active">自己紹介</th>
         <td><%= customer.introduction %></td>
       </tr>
     </tbody>
