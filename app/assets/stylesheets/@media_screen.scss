@@ -97,23 +97,16 @@
     font-size: 26px!important;
   }
 
-  .member-index::before {
-    font-size: 50px!important;
-  }
-
-  .member-info{
+  .member-info,
+  .mypage,
+  .edit-profile {
     font-size: 20px!important;
   }
 
-  .member-info::before {
-    font-size: 50px!important;
-  }
-
-  .mypage{
-    font-size: 20px!important;
-  }
-
-  .mypage::before {
+  .member-index::before,
+  .member-info::before,
+  .mypage::before,
+  .edit-profile::before {
     font-size: 50px!important;
   }
 
@@ -125,6 +118,11 @@
     width: 45%!important;
     margin-right: 7px!important;
     margin-left: 11px!important;
+  }
+
+  .error-massage {
+    width: 100%!important;
+    margin: 0px auto!important;
   }
 
 }
