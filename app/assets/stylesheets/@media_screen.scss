@@ -99,14 +99,16 @@
 
   .member-info,
   .mypage,
-  .edit-profile {
+  .edit-profile,
+  .sign-in {
     font-size: 20px!important;
   }
 
   .member-index::before,
   .member-info::before,
   .mypage::before,
-  .edit-profile::before {
+  .edit-profile::before,
+  .sign-in::before {
     font-size: 50px!important;
   }
 
