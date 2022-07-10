@@ -1,36 +1,36 @@
 <div class="container py-5">
-  <div class="col-9 offset-1">
+  <div class="col-md-9 offset-md-1">
     <h3 class="mb-5 sub-title">新規会員登録</h3>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "public/shared/error_messages", resource: resource %>
 
       <div class="form-group row">
-        <%= f.label :ニックネーム, class: "col-3" %>
-        <%= f.text_field :nick_name, autocomplete: "nick_name", placeholder: 'ニックネーム', class: "form-control  col-6 offset-1" %>
+        <%= f.label :ニックネーム, class: "col-md-3 col-12" %>
+        <%= f.text_field :nick_name, autocomplete: "nick_name", placeholder: 'ニックネーム', class: "form-control  col-md-6 offset-md-1 col-10 offset-1" %>
       </div>
 
       <div class="form-group row">
-        <%= f.label :email, 'メールアドレス', class: "col-4" %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'sample@example.com', class: "form-control  col-6" %>
+        <%= f.label :email, 'メールアドレス', class: "col-md-4 col-12" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'sample@example.com', class: "form-control  col-md-6 col-10 offset-1" %>
       </div>
 
       <div class="form-group row">
-        <div class="password-form col-4">
+        <div class="password-form col-md-4 col-12">
           <%= f.label :password, 'パスワード' %>
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %>文字以上)</em>
           <% end %>
         </div>
-        <%= f.password_field :password, autocomplete: "new-password", class: "form-control col-6" %>
+        <%= f.password_field :password, autocomplete: "new-password", class: "form-control col-md-6 col-10 offset-1" %>
       </div>
 
       <div class="form-group row mb-4">
-        <%= f.label :password_confirmation, 'パスワード（確認用）', class: "col-4" %>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control col-6" %>
+        <%= f.label :password_confirmation, 'パスワード（確認用）', class: "col-md-4 col-12" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control col-md-6 col-10 offset-1" %>
       </div>
 
       <div class="actions mb-5">
-        <%= f.submit "新規登録", class: "btn btn-success col-3 offset-3" %>
+        <%= f.submit "新規登録", class: "btn btn-success col-md-3 offset-md-3 col-4 offset-1" %>
       </div>
     <% end %>
 
