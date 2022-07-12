@@ -100,7 +100,8 @@
   .member-info,
   .mypage,
   .edit-profile,
-  .sign-in {
+  .sign-in,
+  .admin-customer-index {
     font-size: 20px!important;
   }
 
@@ -108,7 +109,8 @@
   .member-info::before,
   .mypage::before,
   .edit-profile::before,
-  .sign-in::before {
+  .sign-in::before,
+  .admin-customer-index::before {
     font-size: 50px!important;
   }
 
@@ -126,7 +128,7 @@
     width: 100%!important;
     margin: 0px auto!important;
   }
-  
+
   .signin, .signup {
     color: grey!important;
   }
