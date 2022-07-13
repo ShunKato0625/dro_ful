@@ -101,7 +101,9 @@
   .mypage,
   .edit-profile,
   .sign-in,
-  .admin-customer-index {
+  .admin-customer-index,
+  .customer-info,
+  .customer-detail {
     font-size: 20px!important;
   }
 
@@ -110,7 +112,8 @@
   .mypage::before,
   .edit-profile::before,
   .sign-in::before,
-  .admin-customer-index::before {
+  .admin-customer-index::before,
+  .customer-detail::before{
     font-size: 50px!important;
   }
 
