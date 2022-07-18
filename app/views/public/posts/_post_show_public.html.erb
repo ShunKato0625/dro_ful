@@ -36,30 +36,30 @@
     </div>
 
     <div class="col-md-6 col-xs-12 post-show-character">
-      <div class="row">
+      <div class="row-md col-12">
         <b>撮影場所：</b><%= post.title %>
       </div>
-      <div class="row">
+      <div class="row-md col-12">
         <b>都道府県：</b><%= post.prefecture.name %>
       </div>
-      <div class="row">
+      <div class="row-md col-12">
         <b>アクセス：</b><%= post.access %>
       </div>
-      <div class="row">
+      <div class="row-md col-12">
         <b>機体名：</b><%= post.drone_type %>
       </div>
-      <div class="row">
+      <div class="row-md col-12">
         <b>申請：</b><% post.get_request_strings.each_with_index do |req, index| %>
         <%= req %><% if index != post.get_request_strings.size - 1%>,&nbsp;<%end%>
         <% end %>
       </div>
-      <div class="row">
+      <div class="row-md col-12">
         <b>許可：</b><%= post.authorization %>
       </div>
-      <div class="row">
+      <div class="row-md col-12">
         <b>オススメ度：</b><%= render "shared/posts/static_rate", post: post %>
       </div>
-      <div class="row">
+      <div class="row-md col-12">
         <b>備考欄：</b><%= post.remarks %>
       </div>
       <% if customer_signed_in? %>
