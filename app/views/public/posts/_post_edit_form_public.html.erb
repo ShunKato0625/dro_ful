@@ -1,14 +1,14 @@
-<div class="row px-5 mx-5 my-3 post-edit-background">
+<div class="row my-3 post-edit-background">
   <div class="col-12 pt-3">
     <div id="error" class="mb-1"><%= render 'layouts/errors', obj: post %></div>
       <%= form_with model:post, url:post_path(post), method: :patch do |f| %>
       　<div class="field form-group row">
-          <%= f.label :撮影画像, class: "col-2" %>
-          <%= f.file_field :image, accept: "image/*", class:"col-10" %>
+          <%= f.label :撮影画像, class: "col-md-2 col-12" %>
+          <%= f.file_field :image, accept: "image/*", class:"col-md-10 col-12" %>
         </div>
         <div class="form-group row">
-          <%= f.label :撮影場所, class: "col-2" %>
-          <%= f.text_field :title, class:"form-control post_title col-10" %>
+          <%= f.label :撮影場所, class: "col-md-2 col-12" %>
+          <%= f.text_field :title, class:"form-control post_title col-md-10 col-12" %>
         </div>
          <div class="form-group row">
           <%= f.label :都道府県, class: "col-2" %>
