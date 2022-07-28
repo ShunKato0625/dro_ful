@@ -7,18 +7,18 @@
   </div>
 
   <div class="row">
-    <table class="col-7 table border-bottom table-hover table-background">
+    <table class="col-md-7 col-12 table border-bottom table-hover table-background">
       <tbody>
         <tr>
           <th class="col-4 table-active">会員ID</th>
           <td><%= @customer.id %></td>
         </tr>
         <tr>
-          <th class="table-active">ニックネーム</th>
+          <th class="col-4 table-active">ニックネーム</th>
           <td><%= @customer.nick_name %></td>
         </tr>
         <tr>
-          <th class="table-active">メールアドレス</th>
+          <th class="col-4 table-active">メールアドレス</th>
           <td><%= @customer.email %></td>
         </tr>
         <tr>
@@ -37,7 +37,7 @@
         </tr>
       </tbody>
     </table>
-    <div class="offset-1 col-3 d-flex align-items-center">
+    <div class="offset-md-1 col-md-3 col-9 offset-2 d-flex align-items-center">
       <%= image_tag customer.get_profile_image(200,200), class: "rounded-circle" %>
     </div>
   </div>
@@ -47,4 +47,7 @@
     </div>
   </div>
   <%= render 'admin/posts/post_index_admin', posts: posts, customer: customer %>
+  <div class="d-flex justify-content-center pt-5">
+    <%= paginate posts %>
+  </div>
 </div>

@@ -1,0 +1,143 @@
+/* スマートフォンサイズ（425px）以下の際に適用される設定 */
+@media screen and (max-width:425px) {
+
+  //Top
+
+  .top-modal-text {
+    font-weight: bold;
+  }
+
+  .blinking {
+    position: absolute;
+    top: 76%;
+    left: 20% !important;
+  }
+
+  .js-modal-top {
+  position: absolute;
+  top: 85%;
+  left: 25% !important;
+  }
+
+  .modal-top-content-js{
+    width: 100% !important;
+    height: 80% !important;
+    padding: 30px 10px;
+  }
+
+  .modal-questions-content-js{
+    width: 100% !important;
+    height: 80% !important;
+    padding: 30px 40px 30px 40px !important;
+    font-size: 7px !important;
+  }
+
+  .smartphone {
+    display: block !important;
+  }
+
+
+  //About
+
+  // Aboutタイトル
+  h1{
+    font-size: 35px !important;
+  }
+
+  #slide{
+    width: 350px;
+    height: 400px;
+  }
+
+  // スライドショーに被せた
+  .card-text{
+    height: 280px;
+    width: 280px;
+    font-size: 5px;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .card-img-overlay{
+    padding: 0 10px;
+  }
+
+  .heading {
+    width: 350px;
+  }
+
+  .post-index-card{
+    width: 100%!important;
+  }
+
+  .post-show-character{
+    width: 100%!important;
+  }
+
+  .post-show-background {
+    padding: 0 0!important;
+  }
+
+  .post-show-image {
+    padding: 0 !important;
+  }
+
+  .comment-form {
+    margin: 0 15px;
+  }
+
+  .post-new-background,
+  .post-edit-background {
+    padding: 0 10px!important;
+    margin-left:  0!important;
+    margin-right: 0!important;
+  }
+
+  .member-index{
+    font-size: 26px!important;
+  }
+
+  .member-info,
+  .mypage,
+  .edit-profile,
+  .sign-in,
+  .admin-customer-index,
+  .customer-info,
+  .customer-detail {
+    font-size: 20px!important;
+  }
+
+  .member-index::before,
+  .member-info::before,
+  .mypage::before,
+  .edit-profile::before,
+  .sign-in::before,
+  .admin-customer-index::before,
+  .customer-detail::before{
+    font-size: 50px!important;
+  }
+
+  .email{
+    font-size: 14px;
+  }
+
+  .customer-card {
+    width: 45%!important;
+    margin-right: 7px!important;
+    margin-left: 11px!important;
+  }
+
+  .error-massage {
+    width: 100%!important;
+    margin: 0px auto!important;
+  }
+
+  .signin, .signup {
+    color: grey!important;
+  }
+
+  .customer-detail{
+    text-align: center!important;
+  }
+
+}

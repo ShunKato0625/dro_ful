@@ -1,10 +1,10 @@
-<div class="post-show-background px-5">
+<div class="post-show-background mt-3 pb-4">
   <div class='row pt-5'>
-    <div class="col-6">
+    <div class="col-sm-6">
       <div class="row justify-content-center">
         投稿ID：<%= post.id %>
       </div>
-      <%= image_tag post.image,size: "480x360" %>
+      <%= image_tag post.image,size: "480x360" ,class:"col-12 col post-show-image" %>
       <div class="row mt-2 justify-content-center" style="line-height:40px">
           撮影日：<%= post.shooting_date %>
       </div>
@@ -29,31 +29,31 @@
       </div>
     </div>
 
-    <div class="col-6 post-show-character">
-      <div class="row">
+    <div class="col-md-6 col-12 post-show-character">
+      <div class="row-md col-12">
         <b>撮影場所：</b><%= post.title %>
       </div>
-      <div class="row">
+      <div class="row-md col-12">
         <b>都道府県：</b><%= post.prefecture.name %>
       </div>
-      <div class="row">
+      <div class="row-md col-12">
         <b>アクセス：</b><%= post.access %>
       </div>
-      <div class="row">
+      <div class="row-md col-12">
         <b>機体名：</b><%= post.drone_type %>
       </div>
-      <div class="row">
+      <div class="row-md col-12">
         <b>申請：</b><% post.get_request_strings.each_with_index do |req, index| %>
         <%= req %><% if index != post.get_request_strings.size - 1%>,&nbsp;<%end%>
         <%end%>
       </div>
-      <div class="row">
+      <div class="row-md col-12">
         <b>許可：</b><%= post.authorization %>
       </div>
-      <div class="row">
+      <div class="row-md col-12">
         <b>オススメ度：</b><%= render "shared/posts/static_rate", post: post %>
       </div>
-      <div class="row">
+      <div class="row-md col-12">
         <b>備考欄：</b><%= post.remarks %>
       </div>
       <div class="row justify-content-around my-5">
