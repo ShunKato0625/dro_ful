@@ -25,7 +25,7 @@
       </div>
       <div class="form-gropu row">
         <%= f.label :is_deleted, '会員ステータス', class: "col-md-3 col-12" %>
-        <div class="custom-control custom-radio">
+        <div class="custom-control custom-radio col-md-6 col-10 offset-1">
           <%= f.radio_button :is_deleted, false %> <%= f.label :is_active, "有効", class:"mr-3" %>
           <%= f.radio_button :is_deleted, true %> <%= f.label :is_active, "退会" %>
         </div>
