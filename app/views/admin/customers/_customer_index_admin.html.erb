@@ -12,7 +12,7 @@
     <tbody>
       <% @customers.each do |customer| %>
         <tr onclick='window.location="<%= '/admin/customers/' + customer.id.to_s %>"' role="link">
-          <td class="py-4" style="width: 10%">
+          <td class="py-4 text-center" style="width: 10%">
             <%= customer.id %>
           </td>
           <td class="py-4" style="width: 20%">
