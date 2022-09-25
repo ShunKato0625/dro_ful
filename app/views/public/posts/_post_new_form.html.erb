@@ -15,7 +15,7 @@
           <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name,{include_blank: "---"} ,class: "col-5") %>
         </div>
         <div class="form-group row">
-          <%= f.label :撮影日, class: "col-md-2 col-12" %>
+          <%= f.label :撮影日, class: "col-md-2 col-12 font-weight-bold" %>
           <%= f.date_field :shooting_date, class:"form-control post_shooting_date col-md-3 col-5" %>
         </div>
         <div class="form-group row">
