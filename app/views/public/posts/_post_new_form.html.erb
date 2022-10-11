@@ -83,7 +83,7 @@
         <input type="button" value="検索" onclick="codeAddress()">
         <p>マーカーをドラック＆ドロップで位置の調整ができます。<p>
           <div class="actions">
-            <%= f.label :lat,"緯度" %>
+            <%= f.label :lat,"緯度", class:"font-weight-bold" %>
             <%= f.text_field :lat, placeholder:"自動入力", id: :lat %>
             <%= f.label :lng,"経度" %>
             <%= f.text_field :lng, placeholder:"自動入力", id: :lng %>
